@@ -2,17 +2,24 @@
 
 import { useEffect, useState } from "react";
 import { signOut } from "next-auth/react";
+import { useTranslations } from "next-intl";
 
 
-export default function AdminHeader({
+
+export default function AdminHeader({ 
   name
 }:{
   name:string
 }){
 
 
+  const t = useTranslations("adminHeader");
+
+
   const [greeting,setGreeting] = useState("");
+
   const [time,setTime] = useState("");
+
 
 
 
@@ -28,21 +35,23 @@ export default function AdminHeader({
 
 
 
+
       if(hour < 12){
 
-        setGreeting("Good Morning");
+        setGreeting(t("morning"));
 
       }
       else if(hour < 18){
 
-        setGreeting("Good Afternoon");
+        setGreeting(t("afternoon"));
 
       }
       else{
 
-        setGreeting("Good Evening");
+        setGreeting(t("evening"));
 
       }
+
 
 
 
@@ -55,7 +64,9 @@ export default function AdminHeader({
 
 
 
+
     updateTime();
+
 
 
 
@@ -66,11 +77,16 @@ export default function AdminHeader({
 
 
 
+
     return ()=>clearInterval(timer);
 
 
 
-  },[]);
+
+  },[t]);
+
+
+
 
 
 
@@ -78,7 +94,8 @@ export default function AdminHeader({
 
   return (
 
-    <div
+
+    <div 
       className="
       flex
       justify-between
@@ -88,7 +105,9 @@ export default function AdminHeader({
 
 
 
+
       <div>
+
 
 
 
@@ -101,9 +120,10 @@ export default function AdminHeader({
           "
         >
 
-          Youyang AI Command Center
+          {t("title")}
 
         </p>
+
 
 
 
@@ -126,6 +146,7 @@ export default function AdminHeader({
 
 
 
+
         <p
           className="
           mt-3
@@ -139,7 +160,9 @@ export default function AdminHeader({
 
 
 
+
       </div>
+
 
 
 
@@ -157,6 +180,8 @@ export default function AdminHeader({
 
 
 
+
+
         <div
           className="
           rounded-2xl
@@ -168,6 +193,7 @@ export default function AdminHeader({
           "
         >
 
+
           <p
             className="
             text-green-400
@@ -175,9 +201,10 @@ export default function AdminHeader({
             "
           >
 
-            ● ALL SYSTEMS ONLINE
+            ● {t("online")}
 
           </p>
+
 
 
         </div>
@@ -187,13 +214,17 @@ export default function AdminHeader({
 
 
 
+
+
         <button
 
-          onClick={()=>
+
+          onClick={()=> 
             signOut({
               callbackUrl:"/admin/login"
             })
           }
+
 
           className="
           rounded-xl
@@ -209,9 +240,11 @@ export default function AdminHeader({
           hover:text-white
           "
 
+
         >
 
-          Logout
+          {t("logout")}
+
 
         </button>
 
@@ -226,6 +259,7 @@ export default function AdminHeader({
 
 
     </div>
+
 
   );
 

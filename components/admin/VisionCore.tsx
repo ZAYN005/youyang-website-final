@@ -1,6 +1,7 @@
 "use client";
 
 import { Canvas, useFrame } from "@react-three/fiber";
+
 import {
   OrbitControls,
   Float,
@@ -10,7 +11,12 @@ import {
 } from "@react-three/drei";
 
 import { useRef } from "react";
+
 import * as THREE from "three";
+
+import { useTranslations } from "next-intl";
+
+
 
 
 
@@ -43,15 +49,15 @@ function CoreObject() {
 
 
 
+
+
   return (
+
 
     <group ref={core}>
 
 
-      {/* AI Core Sphere */}
-
       <Sphere args={[1,128,128]}>
-
 
         <meshStandardMaterial
 
@@ -65,13 +71,12 @@ function CoreObject() {
 
         />
 
-
       </Sphere>
 
 
 
 
-      {/* Inner Energy Ring */}
+
 
       <Torus
         args={[
@@ -92,13 +97,13 @@ function CoreObject() {
 
         />
 
-
       </Torus>
 
 
 
 
-      {/* Horizontal Scan Ring */}
+
+
 
       <Torus
 
@@ -127,13 +132,13 @@ function CoreObject() {
 
         />
 
-
       </Torus>
 
 
 
 
-      {/* Vertical Ring */}
+
+
 
       <Torus
 
@@ -162,16 +167,19 @@ function CoreObject() {
 
         />
 
-
       </Torus>
 
 
 
     </group>
 
+
   );
 
+
 }
+
+
 
 
 
@@ -181,6 +189,7 @@ function ScannerPulse(){
 
 
 const ring = useRef<THREE.Mesh>(null);
+
 
 
 
@@ -208,7 +217,10 @@ scale
 
 
 
+
+
 return (
+
 
 <Torus
 
@@ -223,6 +235,7 @@ args={[
 
 >
 
+
 <meshStandardMaterial
 
 color="#00ffff"
@@ -233,7 +246,9 @@ emissiveIntensity={4}
 
 />
 
+
 </Torus>
+
 
 );
 
@@ -246,11 +261,17 @@ emissiveIntensity={4}
 
 
 
+
+
 export default function VisionCore(){
+
+
+const t = useTranslations("visionCore");
 
 
 
 return (
+
 
 
 <div
@@ -266,6 +287,7 @@ relative
 >
 
 
+
 <div
 className="
 absolute
@@ -276,6 +298,7 @@ z-10
 >
 
 
+
 <p
 className="
 text-cyan-400
@@ -284,9 +307,13 @@ text-sm
 "
 >
 
-AI VISION CORE
+
+{t("title")}
+
 
 </p>
+
+
 
 
 <p
@@ -297,26 +324,39 @@ mt-2
 "
 >
 
-REAL TIME INTELLIGENCE ENGINE
+
+{t("subtitle")}
+
 
 </p>
+
+
 
 
 </div>
 
 
 
+
+
+
+
 <Canvas
+
 camera={{
 position:[0,0,6]
 }}
+
 >
 
 
 
 <ambientLight
+
 intensity={1}
+
 />
+
 
 
 
@@ -333,6 +373,7 @@ color="#00eaff"
 intensity={10}
 
 />
+
 
 
 
@@ -354,6 +395,7 @@ intensity={5}
 
 
 
+
 <Stars
 
 radius={20}
@@ -367,6 +409,7 @@ factor={3}
 fade
 
 />
+
 
 
 
@@ -392,6 +435,7 @@ floatIntensity={0.6}
 
 
 
+
 <OrbitControls
 
 enableZoom={false}
@@ -404,10 +448,15 @@ autoRotateSpeed={0.5}
 
 
 
+
+
 </Canvas>
 
 
+
+
 </div>
+
 
 
 );

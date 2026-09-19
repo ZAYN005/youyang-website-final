@@ -438,29 +438,6 @@ export default function Footer() {
           </p>
 
 
-
-
-          <div className="flex gap-5">
-
-
-            <Link href={`/${locale}/privacy-policy`}>
-
-              {t("privacy")}
-
-            </Link>
-
-
-
-            <Link href={`/${locale}/terms`}>
-
-              {t("terms")}
-
-            </Link>
-
-
-          </div>
-
-
         </div>
 
 

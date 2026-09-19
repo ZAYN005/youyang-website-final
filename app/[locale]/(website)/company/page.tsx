@@ -357,66 +357,6 @@ export default async function CompanyPage() {
 
 
 
-
-
-      {/* CTA */}
-
-
-      <section className="py-20">
-
-
-        <Container>
-
-
-
-          <div className="rounded-3xl bg-navy p-10 text-white">
-
-
-
-            <h2 className="text-3xl font-bold">
-
-              {t("cta.title")}
-
-            </h2>
-
-
-
-
-            <p className="mt-4 text-slate-300">
-
-              {t("cta.description")}
-
-            </p>
-
-
-
-
-            <div className="mt-6">
-
-
-              <Button href="/contact">
-
-                {t("cta.button")}
-
-              </Button>
-
-
-            </div>
-
-
-
-          </div>
-
-
-
-        </Container>
-
-
-
-      </section>
-
-
-
     </main>
 
   );

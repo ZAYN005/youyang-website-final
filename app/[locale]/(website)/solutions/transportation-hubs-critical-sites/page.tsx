@@ -4,6 +4,8 @@ import Container from "@/components/ui/Container";
 
 import Button from "@/components/ui/Button";
 
+import { useTranslations, useLocale } from "next-intl";
+
 
 
 export const metadata: Metadata = {
@@ -17,306 +19,531 @@ export const metadata: Metadata = {
 };
 
 
+
+
+
 const challenges = [
-  "Managing security in high passenger-flow environments",
-  "Limited awareness across large transportation areas",
-  "Difficulty detecting abnormal activities quickly",
-  "Need for efficient emergency response and operational safety",
+
+  "security",
+
+  "awareness",
+
+  "abnormal",
+
+  "emergency",
+
 ];
+
+
+
 
 
 const capabilities = [
-  "Wide-area intelligent monitoring",
-  "Restricted-area intrusion detection",
-  "Personnel trajectory tracking",
-  "AI-powered target recognition",
-  "Real-time situation awareness",
+
+  "wideArea",
+
+  "intrusion",
+
+  "trajectory",
+
+  "recognition",
+
+  "situation",
+
 ];
+
+
+
 
 
 const applications = [
-  "Airports",
-  "High-speed railway stations",
-  "Metro stations",
-  "Coach stations",
+
+  "airports",
+
+  "railway",
+
+  "metro",
+
+  "coach",
+
 ];
+
+
+
 
 
 export default function TransportationPage() {
 
+
+  const t = useTranslations("transportation");
+
+    const locale = useLocale();
+
+
+
   return (
+
 
     <main>
 
 
+
       {/* Hero */}
+
 
       <section className="bg-space-navy py-24 text-white">
 
+
         <Container>
+
 
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
 
 
+
             <div>
 
+
+
               <p className="text-sm uppercase tracking-[0.3em] text-tech-cyan">
-                Industry Solution
+
+
+                {t("hero.label")}
+
+
               </p>
 
 
+
+
               <h1 className="mt-5 text-5xl font-bold">
-                Transportation Hubs & Critical Sites
+
+
+                {t("hero.title")}
+
+
               </h1>
+
+
+
 
 
               <p className="mt-6 text-lg leading-relaxed text-slate-300">
 
-                Intelligent perception solutions designed for
-                airports, railway stations, metro systems,
-                and other critical transportation environments.
+
+                {t("hero.description")}
+
 
               </p>
 
 
+
+
+
               <div className="mt-8">
 
-                <Button href="/contact">
-                  Request Demo →
-                </Button>
+
+                <Button href={`/${locale}/contact`}>
+  {t("hero.button")} →
+</Button>
+
 
               </div>
 
 
+
             </div>
+
+
+
 
 
             <div className="overflow-hidden rounded-3xl">
 
+
               <img
+
                 src="/solutions/airport.png"
-                alt="Transportation Hubs"
+
+                alt={t("hero.title")}
+
                 className="h-[420px] w-full object-cover"
+
               />
+
 
             </div>
 
 
+
           </div>
+
 
         </Container>
 
+
       </section>
+
+
+
 
 
 
 
       {/* Overview */}
 
+
+
       <section className="py-20">
+
 
         <Container>
 
+
+
           <h2 className="text-3xl font-bold text-navy">
-            Solution Overview
+
+
+            {t("overview.title")}
+
+
           </h2>
+
+
+
 
 
           <p className="mt-6 max-w-4xl text-lg text-text-muted">
 
-            Transportation hubs require continuous monitoring
-            and rapid response capabilities due to complex
-            environments and large passenger volumes.
-            Youyang intelligent sensing systems provide
-            panoramic perception and AI-based analysis to
-            improve safety and operational efficiency.
+
+            {t("overview.description")}
+
 
           </p>
 
+
+
         </Container>
 
+
       </section>
+
+
+
+
 
 
 
 
       {/* Challenges */}
 
+
+
       <section className="bg-gray-bg py-20">
+
 
         <Container>
 
+
+
+
           <h2 className="text-3xl font-bold text-navy">
-            Key Challenges
+
+
+            {t("challenges.title")}
+
+
           </h2>
+
+
+
+
 
 
           <div className="mt-10 grid gap-5 md:grid-cols-2">
 
+
+
+
+
             {challenges.map(item => (
 
+
+
               <div
+
                 key={item}
+
                 className="rounded-2xl bg-white p-6"
+
               >
 
-                ✓ {item}
+
+                ✓ {t(`challenges.items.${item}`)}
+
+
 
               </div>
 
+
+
+
             ))}
+
+
+
+
 
           </div>
 
 
+
+
         </Container>
 
+
       </section>
+            {/* Capabilities */}
 
-
-
-
-      {/* Capabilities */}
 
       <section className="py-20">
 
+
         <Container>
 
+
+
           <h2 className="text-3xl font-bold text-navy">
-            Intelligent Capabilities
+
+
+            {t("capabilities.title")}
+
+
           </h2>
+
+
+
 
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">
 
+
+
             {capabilities.map(item => (
 
+
+
               <div
+
                 key={item}
+
                 className="rounded-2xl border p-6 font-semibold text-navy"
+
               >
 
-                ✓ {item}
+
+                ✓ {t(`capabilities.items.${item}`)}
+
+
 
               </div>
 
+
+
             ))}
+
+
 
           </div>
 
 
+
         </Container>
 
+
       </section>
+
+
+
 
 
 
 
       {/* Applications */}
 
+
+
       <section className="bg-gray-bg py-20">
+
 
         <Container>
 
+
+
           <h2 className="text-3xl font-bold text-navy">
-            Application Areas
+
+
+            {t("applications.title")}
+
+
           </h2>
+
+
+
+
 
 
           <div className="mt-8 grid gap-5 md:grid-cols-2">
 
+
+
             {applications.map(item => (
 
+
+
               <div
+
                 key={item}
+
                 className="rounded-xl bg-white p-6 font-semibold"
+
               >
 
-                {item}
+
+                {t(`applications.items.${item}`)}
+
+
 
               </div>
 
+
+
+
             ))}
+
+
 
           </div>
 
+
+
+
         </Container>
 
+
       </section>
+
+
+
+
 
 
 
 
       {/* Products */}
 
+
+
       <section className="py-20">
+
 
         <Container>
 
+
+
           <h2 className="text-3xl font-bold text-navy">
-            Recommended Products
+
+
+            {t("products.title")}
+
+
           </h2>
+
+
+
 
 
           <div className="mt-8 grid gap-6 md:grid-cols-3">
 
-            {[
-              "360 Sentinel",
-              "Dome Watch",
-              "Wide-area Guardian",
-            ].map(item => (
 
-              <div
-                key={item}
-                className="rounded-2xl bg-gray-bg p-7 font-bold text-navy"
-              >
 
-                {item}
 
-              </div>
 
-            ))}
+            <div className="rounded-2xl bg-gray-bg p-7">
+
+
+              <h3 className="text-xl font-bold text-navy">
+
+
+                {t("products.sentinel.name")}
+
+
+              </h3>
+
+
+
+            </div>
+
+
+
+
+
+
+            <div className="rounded-2xl bg-gray-bg p-7">
+
+
+              <h3 className="text-xl font-bold text-navy">
+
+
+                {t("products.dome.name")}
+
+
+              </h3>
+
+
+
+            </div>
+
+
+
+
+
+
+            <div className="rounded-2xl bg-gray-bg p-7">
+
+
+              <h3 className="text-xl font-bold text-navy">
+
+
+                {t("products.guardian.name")}
+
+
+              </h3>
+
+
+
+            </div>
+
+
+
+
 
           </div>
 
+
+
         </Container>
+
 
       </section>
 
 
-
-
-      <section className="pb-20">
-
-        <Container>
-
-          <div className="rounded-3xl bg-navy p-10 text-white">
-
-            <h2 className="text-3xl font-bold">
-              Safer Intelligent Transportation Systems
-            </h2>
-
-
-            <p className="mt-4 text-slate-300">
-              Deploy advanced sensing technology for
-              transportation security and operational awareness.
-            </p>
-
-
-            <Button href="/contact">
-              Contact Us →
-            </Button>
-
-
-          </div>
-
-        </Container>
-
-      </section>
 
 
     </main>
 
+
   );
+
 
 }

@@ -379,7 +379,7 @@
 
     "dome": {
 
-      "name": "穹顶监控",
+      "name": "云瞰",
 
       "description": "具备智能场景感知和AI识别能力的全景监控设备。",
 
@@ -567,7 +567,7 @@
     },
         "guardian": {
 
-      "name": "广域守护者",
+      "name": "广域卫士",
 
       "description": "融合全景成像、AI识别和智能感知技术的广域感知设备。",
 
@@ -756,6 +756,1228 @@
 
   },
 
+"contact": {
+
+  "hero": {
+    "label": "联系我们",
+    "title": "共同打造智能视觉解决方案",
+    "description": "联系优阳智能控制，获取智能感知解决方案、技术咨询以及定制化部署支持。",
+    "button": "申请演示 →"
+  },
+
+
+  "benefits": {
+
+    "title": "为什么选择我们？",
+
+    "items": {
+
+      "engineering": {
+        "title": "工程技术能力",
+        "description": "我们的技术团队将评估您的环境，并提供合适的智能感知解决方案。"
+      },
+
+      "customized": {
+        "title": "定制化解决方案",
+        "description": "根据应用场景、覆盖需求和项目目标提供部署建议。"
+      },
+
+      "support": {
+        "title": "全流程支持",
+        "description": "从初步咨询到实施规划，我们为智能视觉项目提供全面支持。"
+      }
+
+    }
+
+  },
+
+
+  "information": {
+    "email": "邮箱",
+    "phone": "电话",
+    "address": "地址"
+  },
+
+
+  "form": {
+
+    "title": "申请演示",
+
+    "description": "告诉我们您的项目需求，我们的团队将为您提供合适的解决方案建议。",
+
+    "supportTitle": "支持内容",
+
+    "support": {
+      "one": "应用需求分析",
+      "two": "产品推荐",
+      "three": "部署咨询",
+      "four": "项目实施支持"
+    },
+
+
+    "fields": {
+
+      "name": "姓名",
+      "company": "公司名称",
+      "email": "企业邮箱",
+      "phone": "电话号码",
+      "country": "国家 / 地区",
+      "solution": "选择解决方案",
+      "product": "选择产品",
+      "message": "描述您的需求"
+
+    },
+
+
+    "sending": "发送中...",
+    "submit": "提交请求 →"
+
+  },
+
+
+  "solutions": {
+
+    "urban": "城市公共空间",
+    "transportation": "交通枢纽与关键场所",
+    "campuses": "校园与教育机构",
+    "healthcare": "医疗与养老设施",
+    "security": "高安全场所",
+    "industrial": "商业与工业场景"
+
+  },
+
+
+  "products": {
+
+    "sentinel": "360 Sentinel",
+    "dome": "Dome Watch",
+    "guardian": "Wide-area Guardian"
+
+  },
+
+
+  "messages": {
+
+    "success": "感谢您的提交，我们的团队将尽快联系您。",
+    "failed": "提交失败，请重试。",
+    "error": "发生错误，请稍后再试。"
+
+  }
+
+},
+
+"resources": {
+
+  "hero": {
+    "label": "资源中心",
+    "title": "智能视觉系统知识中心",
+    "description": "探索优阳智能感知解决方案相关的常见问题和技术信息。"
+  },
+
+
+  "faqTitle": "常见问题",
+
+
+  "faq": {
+
+    "ai": {
+
+      "category": "AI边缘计算能力",
+
+      "q1": {
+        "question": "AI目标检测和识别计算是在设备端完成还是后台平台完成？",
+        "answer": "目标检测、分类和定位计算均在摄像设备边缘端完成。AI系统实时输出结构化识别结果，降低传输延迟并提升运行效率。即使网络中断，本地AI分析和告警功能仍可正常运行。"
+      },
+
+      "q2": {
+        "question": "系统如何降低AI误报和漏检？",
+        "answer": "系统支持置信度阈值调整、区域屏蔽、时间过滤和目标尺寸过滤。边缘处理能够过滤无效告警，仅输出有效事件和结构化数据。"
+      }
+
+    },
+
+
+    "management": {
+
+      "category": "访问与运行管理",
+
+      "q1": {
+        "question": "访问设备是否需要专用客户端软件？",
+        "answer": "无需安装专用客户端软件。用户可以通过电脑和平板浏览器远程查看视频、配置参数以及管理录像。"
+      },
+
+      "q2": {
+        "question": "如何集中管理多台设备？",
+        "answer": "设备支持权限管理以及标准安防平台集成，实现集中管理、任务调度和协同告警处理。"
+      },
+
+      "q3": {
+        "question": "设备固件和算法如何升级？",
+        "answer": "固件和算法包可以通过网页界面远程升级，无需现场拆卸设备。同时支持版本回退，保证系统稳定运行。"
+      }
+
+    },
+
+
+    "integration": {
+
+      "category": "平台集成与协议",
+
+      "q1": {
+        "question": "优阳设备是否可以接入现有安防监控平台？",
+        "answer": "可以。系统支持与现有安防平台集成，视频流、告警事件和AI结构化数据可以传输至已有平台，无需大规模改造。"
+      },
+
+      "q2": {
+        "question": "私有协议平台集成是否需要大量开发？",
+        "answer": "标准协议通常可以直接完成平台注册。私有协议平台仅需要有限适配，无需大量二次开发。"
+      }
+
+    },
+
+
+    "storage": {
+
+      "category": "视频存储与检索",
+
+      "q1": {
+        "question": "支持哪些存储方式？录像是否可以通过AI事件搜索？",
+        "answer": "系统支持NVR和服务器存储方式。原始视频和AI结构化数据同时保存，可根据目标类型、时间和告警事件快速检索。"
+      },
+
+      "q2": {
+        "question": "全景设备是否会占用大量网络带宽？",
+        "answer": "AI告警结构化数据占用非常低的带宽。视频支持多码流配置，并可根据网络环境调整码率。"
+      }
+
+    },
+
+
+    "deployment": {
+
+      "category": "部署与硬件性能",
+
+      "q1": {
+        "question": "一台全景设备可以覆盖多大区域？适合部署在哪里？",
+        "answer": "高位安装适用于港口、露天矿区、机场、工业园区和公共区域等大型环境。一台设备可以替代多个传统摄像机，减少监控盲区。"
+      },
+
+      "q2": {
+        "question": "全景成像是否存在拼接缝？是否支持PTZ联动？",
+        "answer": "系统采用多摄像机实时拼接校正算法，输出无缝全景图像。同时支持区域选择以及与PTZ摄像机联动，实现细节查看。"
+      }
+
+    },
+
+
+    "troubleshooting": {
+
+      "category": "故障排查",
+
+      "q1": {
+        "question": "设备离线时应该如何排查？",
+        "answer": "首先检查电源和网络连接，然后重启设备，确认IP地址和VLAN配置，必要时恢复出厂设置。"
+      },
+
+      "q2": {
+        "question": "存在告警事件但平台无法接收时，需要检查什么？",
+        "answer": "检查平台注册状态、告警配置以及网络防火墙规则是否阻止事件传输。"
+      }
+
+    }
+
+  },
+
+
+  "downloads": {
+
+    "title": "下载中心",
+
+    "description": "产品手册、说明文档和技术资料将在此提供。"
+
+  },
+
+
+  "whitepapers": {
+
+    "title": "白皮书",
+
+    "description": "技术洞察和行业研究资料将在此发布。"
+
+  },
+
+
+  "comingSoon": "即将上线"
+
+},
+
+"solutions": {
+  "hero": {
+    "label": "行业解决方案",
+    "title": "面向关键环境的智能视觉解决方案",
+    "description": "优阳智能控制结合全景感知、边缘AI计算和智能识别技术，为安防、交通、医疗、教育和工业领域提供智能解决方案。"
+  },
+
+  "solutionLabel": "解决方案",
+  "coverage": "覆盖范围",
+  "coreValue": "核心价值",
+  "explore": "探索方案",
+
+  "items": {
+    "urban": {
+      "title": "城市公共空间",
+      "description": "面向城市广场、公共场馆和开放区域的智能视觉感知解决方案，支持持续安全感知与智能分析。",
+      "coverage": "城市广场、体育场馆、公园、市政道路",
+      "value": "支持人群管理、异常行为检测、应急响应和智能公共安全监控。"
+    },
+
+    "transportation": {
+      "title": "交通枢纽与关键场所",
+      "description": "适用于机场、火车站、地铁站等高流量交通环境的先进智能感知系统。",
+      "coverage": "机场、火车站、地铁站、客运枢纽",
+      "value": "实现智能监控、重点区域防护、人员追踪和运营安全管理。"
+    },
+
+    "campus": {
+      "title": "校园与教育机构",
+      "description": "通过主动视觉感知技术，为学校和教育环境提供更安全的智能防护方案。",
+      "coverage": "幼儿园、中小学、高校",
+      "value": "通过周界防护、异常事件检测和智能安全管理提升校园安全水平。"
+    },
+
+    "healthcare": {
+      "title": "医疗与养老机构",
+      "description": "面向医院、诊所及养老机构的可靠智能监控解决方案，满足连续防护需求。",
+      "coverage": "医院、诊所、养老机构",
+      "value": "支持重点区域监控、患者安全、紧急预警和智能医疗防护。"
+    },
+
+    "security": {
+      "title": "高安全场所",
+      "description": "为需要严格安全管理的敏感环境设计的先进智能感知解决方案。",
+      "coverage": "监狱、看守所、博物馆、档案馆、图书馆",
+      "value": "提供入侵检测、行为分析和多层级智能安防保护。"
+    },
+
+    "industrial": {
+      "title": "商业与工业作业场景",
+      "description": "适用于工厂、物流园区、施工现场及工业环境的AI视觉智能解决方案。",
+      "coverage": "工厂、施工现场、物流园区、商业设施",
+      "value": "通过智能感知提升生产安全、运营效率和资产保护能力。"
+    }
+  },
+
+  "features": {
+    "crowd": "人群密度监测",
+    "behavior": "异常行为检测",
+    "awareness": "AI态势感知",
+
+    "intrusion": "重点区域入侵检测",
+    "trajectory": "人员轨迹分析",
+    "monitoring": "大范围监控",
+
+    "perimeter": "校园周界防护",
+    "safety": "安全事件检测",
+    "intelligent": "智能监控",
+
+    "critical": "重点区域监控",
+    "risk": "安全风险识别",
+    "patient": "患者防护感知",
+
+    "asset": "资产保护",
+
+    "hazard": "危险源检测",
+    "security": "工业安全感知"
+  },
+
+  "architecture": {
+    "label": "智能生态系统",
+    "title": "智能感知架构"
+  },
+
+  "productsTitle": "由核心产品驱动的解决方案",
+
+  "products": {
+    "sentinel": {
+      "name": "360哨兵",
+      "description": "基于复眼成像的全景智能感知系统，提供大范围智能视觉感知能力。"
+    },
+
+    "dome": {
+      "name": "云瞰",
+      "description": "融合全景成像技术与AI识别能力的智能监控系统。"
+    },
+
+    "guardian": {
+      "name": "广域卫士",
+      "description": "面向复杂监控环境的大范围智能感知解决方案。"
+    }
+  },
+
+  "cta": {
+    "title": "为您的应用环境打造智能系统",
+    "description": "联系优阳智能控制，获取定制化智能感知解决方案。",
+    "button": "申请演示"
+  }
+},
+
+"urbanPublicSpaces": {
+
+  "hero": {
+    "label": "行业解决方案",
+    "title": "城市公共空间",
+    "description": "面向城市公共区域、公共场馆和城市环境的智能视觉感知解决方案，实现持续态势感知和高效安全管理。",
+    "button": "申请演示"
+  },
+
+
+  "overview": {
+    "title": "解决方案概述",
+    "description": "城市公共空间需要智能化监控能力，以提升安全管理水平、提高应急响应效率，并理解复杂的人群环境。优阳智能控制结合全景感知与AI智能识别技术，为大型公共区域提供持续视觉感知能力。"
+  },
+
+
+  "challenges": {
+
+    "title": "核心挑战",
+
+    "items": {
+
+      "crowd": "大型公共区域的人群管理",
+
+      "abnormal": "难以及时发现异常活动",
+
+      "blindspots": "传统监控存在盲区，导致感知能力不足",
+
+      "emergency": "需要更快速的应急响应和公共安全管理"
+
+    }
+
+  },
+
+
+
+  "capabilities": {
+
+    "title": "智能感知能力",
+
+    "items": {
+
+      "crowdMonitoring": "人群密度监测与异常聚集告警",
+
+      "fallDetection": "跌倒与长时间停留检测",
+
+      "dangerousObject": "危险物体识别",
+
+      "wideArea": "大范围智能感知",
+
+      "securityAnalysis": "实时AI辅助安全分析"
+
+    }
+
+  },
+
+
+
+  "applications": {
+
+    "title": "应用领域",
+
+    "items": {
+
+      "squares": "城市广场",
+
+      "sports": "体育场馆",
+
+      "parks": "城市公园",
+
+      "streets": "市政道路"
+
+    }
+
+  },
+
+
+
+  "products": {
+
+    "title": "推荐产品",
+
+
+    "sentinel": {
+
+      "name": "360哨兵",
+
+      "description": "基于全景感知和AI智能识别的大范围视觉感知系统。"
+
+    },
+
+
+    "dome": {
+
+      "name": "穹顶守望",
+
+      "description": "适用于复杂场景的智能全景监控系统。"
+
+    },
+
+
+    "guardian": {
+
+      "name": "广域守护者",
+
+      "description": "面向大范围环境态势感知的智能解决方案。"
+
+    }
+
+  },
+
+
+
+  "cta": {
+
+    "title": "打造更安全的城市环境",
+
+    "description": "部署智能感知解决方案，提升现代公共安全管理能力。",
+
+    "button": "联系我们"
+
+  }
+
+},
+
+"transportation": {
+
+  "hero": {
+    "label": "行业解决方案",
+    "title": "交通枢纽与关键场所",
+    "description": "面向机场、铁路车站、地铁系统及其他关键交通环境的智能感知解决方案。",
+    "button": "申请演示"
+  },
+
+
+  "overview": {
+    "title": "解决方案概述",
+    "description": "由于环境复杂和客流量巨大，交通枢纽需要持续监控和快速响应能力。优阳智能感知系统通过全景感知和AI智能分析，提高交通环境的安全性和运营效率。"
+  },
+
+
+  "challenges": {
+
+    "title": "核心挑战",
+
+    "items": {
+
+      "security": "高客流环境下的安全管理",
+
+      "awareness": "大型交通区域感知能力有限",
+
+      "abnormal": "难以及时发现异常活动",
+
+      "emergency": "需要高效应急响应和运营安全管理"
+
+    }
+
+  },
+
+
+
+  "capabilities": {
+
+    "title": "智能感知能力",
+
+    "items": {
+
+      "wideArea": "大范围智能监控",
+
+      "intrusion": "限制区域入侵检测",
+
+      "trajectory": "人员轨迹追踪",
+
+      "recognition": "AI目标识别",
+
+      "situation": "实时态势感知"
+
+    }
+
+  },
+
+
+
+  "applications": {
+
+    "title": "应用领域",
+
+    "items": {
+
+      "airports": "机场",
+
+      "railway": "高速铁路车站",
+
+      "metro": "地铁站",
+
+      "coach": "客运站"
+
+    }
+
+  },
+
+
+
+  "products": {
+
+    "title": "推荐产品",
+
+    "sentinel": {
+
+      "name": "360哨兵"
+
+    },
+
+    "dome": {
+
+      "name": "穹顶守望"
+
+    },
+
+    "guardian": {
+
+      "name": "广域守护者"
+
+    }
+
+  },
+
+
+
+  "cta": {
+
+    "title": "打造更安全的智能交通系统",
+
+    "description": "部署先进感知技术，提升交通安全与运营态势感知能力。",
+
+    "button": "联系我们"
+
+  }
+
+}, 
+
+"campuses": {
+
+  "hero": {
+    "label": "行业解决方案",
+    "title": "校园与教育机构",
+    "description": "通过持续监控和AI智能安全感知技术，为校园环境打造更加安全的学习空间。",
+    "button": "申请演示"
+  },
+
+
+  "overview": {
+    "title": "解决方案概述",
+    "description": "教育机构需要可靠的安全系统来保护学生、教职员工以及校园基础设施。优阳智能感知技术提供持续监控、智能分析以及快速安全事件感知能力。"
+  },
+
+
+  "challenges": {
+
+    "title": "核心挑战",
+
+    "items": {
+
+      "safety": "确保大型校园环境的整体安全",
+
+      "monitoring": "难以同时监控多个区域",
+
+      "response": "需要更快速响应异常事件",
+
+      "protection": "保护学生、员工及校园设施"
+
+    }
+
+  },
+
+
+
+  "capabilities": {
+
+    "title": "智能感知能力",
+
+    "items": {
+
+      "campusMonitoring": "校园全域智能监控",
+
+      "perimeter": "周界入侵检测",
+
+      "behavior": "异常行为识别",
+
+      "awareness": "大范围态势感知",
+
+      "security": "AI辅助安全管理"
+
+    }
+
+  },
+
+
+
+  "applications": {
+
+    "title": "应用领域",
+
+    "items": {
+
+      "universities": "大学",
+
+      "schools": "学校",
+
+      "training": "培训机构",
+
+      "campuses": "教育园区"
+
+    }
+
+  },
+
+
+
+  "products": {
+
+    "title": "推荐产品",
+
+    "sentinel": "360哨兵",
+
+    "dome": "穹顶守望",
+
+    "guardian": "广域守护者"
+
+  },
+
+
+
+  "cta": {
+
+    "title": "打造更安全的学习环境",
+
+    "description": "通过智能感知和AI监控解决方案提升校园安全能力。",
+
+    "button": "联系我们"
+
+  }
+
+},
+
+"healthcare": {
+
+  "hero": {
+    "label": "行业解决方案",
+    "title": "医疗与养老护理机构",
+    "description": "面向医疗环境的智能监控解决方案，满足可靠感知、安全管理和持续防护需求。",
+    "button": "申请演示"
+  },
+
+
+  "overview": {
+    "title": "解决方案概述",
+    "description": "医疗和养老护理机构需要可靠的监控系统，以支持安全管理、运营管理和应急响应。优阳智能感知解决方案通过AI感知技术提供全面的视觉态势感知能力。"
+  },
+
+
+  "challenges": {
+
+    "title": "核心挑战",
+
+    "items": {
+
+      "safety": "维护敏感医疗环境中的安全",
+
+      "monitoring": "持续监控关键区域",
+
+      "response": "快速响应突发情况",
+
+      "protection": "保护患者、访客和工作人员"
+
+    }
+
+  },
+
+
+
+  "capabilities": {
+
+    "title": "智能感知能力",
+
+    "items": {
+
+      "critical": "关键区域智能监控",
+
+      "abnormal": "异常事件检测",
+
+      "awareness": "基于AI的态势感知",
+
+      "visual": "大范围视觉感知",
+
+      "security": "安全管理支持"
+
+    }
+
+  },
+
+
+
+  "applications": {
+
+    "title": "应用领域",
+
+    "items": {
+
+      "hospitals": "医院",
+
+      "medical": "医疗中心",
+
+      "clinics": "诊所",
+
+      "senior": "养老护理机构"
+
+    }
+
+  },
+
+
+
+  "products": {
+
+    "title": "推荐产品",
+
+    "sentinel": "360哨兵",
+
+    "dome": "穹顶守望",
+
+    "guardian": "广域守护者"
+
+  }
+
+},
+
+"highSecurity": {
+
+  "hero": {
+    "label": "行业解决方案",
+    "title": "高安全防护场所",
+    "description": "面向敏感环境的先进智能感知解决方案，满足可靠安全防护和持续监控需求。",
+    "button": "申请演示"
+  },
+
+
+  "overview": {
+    "title": "解决方案概述",
+    "description": "高安全环境需要精准感知、快速响应和可靠防护能力。优阳智能感知系统结合全景成像和AI分析技术，提供持续的安全态势感知。"
+  },
+
+
+  "challenges": {
+
+    "title": "核心挑战",
+
+    "items": {
+
+      "access": "防止敏感区域未经授权访问",
+
+      "environment": "持续监控复杂安全环境",
+
+      "blindspots": "减少传统监控系统中的盲区",
+
+      "response": "提升安全事件响应效率"
+
+    }
+
+  },
+
+
+
+  "capabilities": {
+
+    "title": "智能感知能力",
+
+    "items": {
+
+      "intrusion": "周界入侵检测",
+
+      "behavior": "AI智能行为分析",
+
+      "monitoring": "大范围安全监控",
+
+      "asset": "关键资产保护",
+
+      "awareness": "智能态势感知"
+
+    }
+
+  },
+
+
+
+  "applications": {
+
+    "title": "应用领域",
+
+    "items": {
+
+      "museums": "博物馆",
+
+      "archives": "档案馆",
+
+      "government": "政府设施",
+
+      "protected": "高安全防护区域"
+
+    }
+
+  },
+
+
+
+  "products": {
+
+    "title": "推荐产品",
+
+    "sentinel": "360哨兵",
+
+    "dome": "穹顶守望",
+
+    "guardian": "广域守护者"
+
+  }
+
+},
+
+"industrial": {
+
+  "hero": {
+    "label": "行业解决方案",
+    "title": "商业与工业作业场景",
+    "description": "面向工厂、物流园区、建筑工地和工业环境的AI智能视觉解决方案。",
+    "button": "申请演示"
+  },
+
+
+  "overview": {
+    "title": "解决方案概述",
+    "description": "工业环境需要可靠的监控系统来提升安全性、保护资产并优化运营效率。优阳智能感知解决方案通过AI智能监控技术提供持续的视觉态势感知。"
+  },
+
+
+  "challenges": {
+
+    "title": "核心挑战",
+
+    "items": {
+
+      "safety": "维护复杂工业环境中的安全",
+
+      "monitoring": "高效监控大范围作业区域",
+
+      "risk": "降低工作场所风险和不安全行为",
+
+      "visibility": "提升安全与运营可视化能力"
+
+    }
+
+  },
+
+
+
+  "capabilities": {
+
+    "title": "智能感知能力",
+
+    "items": {
+
+      "industrial": "工业安全监控",
+
+      "hazard": "危险检测",
+
+      "analysis": "AI智能视觉分析",
+
+      "perception": "大范围视觉感知",
+
+      "awareness": "运营环境态势感知"
+
+    }
+
+  },
+
+
+
+  "applications": {
+
+    "title": "应用领域",
+
+    "items": {
+
+      "factories": "工厂",
+
+      "logistics": "物流园区",
+
+      "construction": "建筑工地",
+
+      "facilities": "工业设施"
+
+    }
+
+  },
+
+
+
+  "products": {
+
+    "title": "推荐产品",
+
+    "sentinel": "360哨兵",
+
+    "dome": "穹顶守望",
+
+    "guardian": "广域守护者"
+
+  }
+
+},
+
+"adminLogin": {
+  "title": "管理员控制中心",
+  "description": "优阳智能控制安全访问入口",
+  "email": "管理员邮箱",
+  "password": "密码",
+  "authenticating": "正在验证...",
+  "button": "进入控制面板 →",
+  "invalid": "邮箱或密码错误",
+  "protected": "企业级管理系统保护"
+},
+
+"adminDashboard": {
+  "overview": "智能概览",
+
+  "inquiries": {
+    "title": "询盘管理",
+    "description": "管理客户请求和销售线索。"
+  },
+
+  "products": {
+    "title": "产品管理",
+    "description": "管理智能视觉产品。"
+  },
+
+  "analytics": {
+    "title": "数据分析",
+    "description": "跟踪系统性能和用户数据。"
+  }
+},
+
+"adminSidebar": {
+
+  "subtitle": "AI智能控制中心",
+
+  "menu": {
+    "command": "指挥中心",
+    "inquiries": "询盘管理",
+    "products": "产品管理",
+    "analytics": "数据分析",
+    "users": "用户管理",
+    "settings": "系统设置"
+  },
+
+  "status": "系统状态",
+
+  "online": "在线",
+
+  "infrastructure": "优阳AI基础设施"
+
+},
+
+"adminHeader": {
+  "title": "优阳AI指挥中心",
+  "morning": "早上好",
+  "afternoon": "下午好",
+  "evening": "晚上好",
+  "online": "所有系统在线",
+  "logout": "退出登录"
+},
+
+"visionCore": {
+  "title": "AI视觉核心",
+  "subtitle": "实时智能引擎"
+},
+
+"liveStats": {
+  "loading": "正在加载系统数据...",
+  "total": "询盘总数",
+  "leads": "新线索",
+  "system": "系统状态",
+  "online": "在线"
+},
+
+"systemMonitor": {
+  "title": "系统智能监控",
+  "database": "数据库已连接",
+  "api": "API网关运行中",
+  "authentication": "身份验证安全",
+  "engine": "AI引擎运行中"
+},
+
+"recentActivity": {
+  "title": "最近智能活动",
+  "empty": "暂无询盘",
+  "individual": "个人",
+  "product": "产品：",
+  "solution": "解决方案：",
+  "notSelected": "未选择"
+},
+
+"inquiryCRM": {
+  "loading": "正在加载CRM...",
+  "title": "询盘智能CRM",
+  "subtitle": "客户线索管理系统",
+  "search": "搜索姓名、邮箱、公司...",
+  "noCompany": "暂无公司",
+  "updated": "询盘更新成功",
+  "updateFailed": "更新失败",
+  "confirmDelete": "确定删除此询盘吗？",
+  "deleted": "询盘已删除",
+  "deleteFailed": "删除失败",
+  "details": "线索详情",
+  "name": "姓名",
+  "email": "邮箱",
+  "country": "国家",
+  "product": "产品",
+  "solution": "解决方案",
+  "status": "状态",
+  "priority": "优先级",
+  "note": "管理员备注",
+  "saving": "保存中...",
+  "save": "保存修改",
+  "delete": "删除询盘"
+},
+
+"productsAdmin": {
+
+  "title": "产品智能管理中心",
+
+  "subtitle": "管理优阳产品",
+
+  "addProduct": "添加产品",
+
+  "editProduct": "编辑产品",
+
+  "save": "保存产品",
+
+  "edit": "编辑",
+
+  "delete": "删除",
+
+  "deleteConfirm": "确定删除产品吗？",
+
+
+  "fields": {
+
+    "name": "产品名称",
+
+    "slug": "Slug",
+
+    "category": "产品类别",
+
+    "shortDescription": "简短描述",
+
+    "description": "产品描述",
+
+    "features": "功能特点（逗号分隔）"
+
+  }
+
+},
+
+"analyticsAdmin": {
+  "loading": "正在加载数据分析...",
+  "title": "数据智能中心",
+  "subtitle": "业务表现概览",
+  "productInterest": "产品兴趣",
+  "countries": "国家分布",
+  "recentLeads": "最近线索"
+},
+
+"settingsAdmin": {
+
+  "loading": "加载中...",
+
+  "title": "系统设置",
+
+  "description": "管理系统偏好设置和账户设置",
+
+  "account": "账户",
+
+  "name": "姓名",
+
+  "email": "邮箱",
+
+  "security": "安全",
+
+  "session": "管理管理员会话",
+
+  "logout": "退出登录",
+
+  "language": "语言",
+
+  "languageDescription": "选择控制台语言",
+
+  "system": "系统",
+
+  "online": "系统在线",
+
+  "commandCenter": "优阳AI指挥中心"
+
+},
+
+"usersAdmin": {
+
+  "loading": "加载中...",
+
+  "title": "用户管理中心",
+
+  "subtitle": "管理管理员权限和角色",
+
+  "create": "创建用户",
+
+  "name": "姓名",
+
+  "email": "邮箱",
+
+  "password": "密码",
+
+  "createButton": "创建用户",
+
+  "delete": "删除"
+
+},
+
+"analyticsCards": {
+  "total": "询盘总数",
+  "leads": "新线索",
+  "contacted": "已联系",
+  "completed": "已完成"
+},
+
+"statPanel": {
+  "systems": "AI系统在线",
+  "inquiries": "新询盘",
+  "projects": "进行中的项目",
+  "status": "检测状态"
+},
+
+"systemStatus": {
+  "title": "系统状态",
+  "engine": "AI识别引擎运行中",
+  "database": "数据库已连接",
+  "network": "视觉网络在线",
+  "security": "安全层已启用"
+},
 
   "footer": {
 
@@ -780,16 +2002,11 @@
 
 
     "products": {
-
-      "title": "产品",
-
-      "sentinel": "360 Sentinel",
-
-      "dome": "Dome Watch",
-
-      "guardian": "Wide-area Guardian"
-
-    },
+  "title": "产品",
+  "sentinel": "360哨兵",
+  "dome": "云瞰",
+  "guardian": "广域卫士"
+},
 
 
     "solutions": {

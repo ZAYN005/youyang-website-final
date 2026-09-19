@@ -176,25 +176,31 @@
 
       "specifications": {
 
-        "title": "Technical Specifications",
+  "title": "Technical Specifications",
 
-        "parameter": "Parameter",
+  "parameter": "Parameter",
 
-        "value": "Details",
+  "value": "Details",
 
-        "items": {
+  "values": {
+    "imaging": "Imaging Technology",
+    "ai": "AI Capability",
+    "application": "Application"
+  },
 
-          "model": "Model",
+  "items": {
 
-          "imaging": "Imaging Technology",
+    "model": "Model",
 
-          "ai": "AI Capability",
+    "imaging": "Imaging Technology",
 
-          "application": "Application"
+    "ai": "AI Capability",
 
-        }
+    "application": "Application"
 
-      },
+  }
+
+},
 
 
       "comparison": {
@@ -333,16 +339,31 @@
 
       "specifications": {
 
-        "title": "Technical Specifications",
+  "title": "Technical Specifications",
 
-        "parameter": "Parameter",
+  "parameter": "Parameter",
 
-        "values": {
-  "imaging": "Panoramic imaging technology",
-  "ai": "Edge AI recognition and intelligent analysis",
-  "application": "Complex monitoring and intelligent sensing scenarios"
-}
-      },
+  "value": "Details",
+
+  "values": {
+    "imaging": "Panoramic Imaging Technology",
+    "ai": "AI-Powered Recognition Capability",
+    "application": "Security Monitoring and Intelligent Surveillance"
+  },
+
+  "items": {
+
+    "model": "Model",
+
+    "imaging": "Imaging Technology",
+
+    "ai": "AI Capability",
+
+    "application": "Application"
+
+  }
+
+},
 
 
       "comparison": {
@@ -496,25 +517,31 @@
 
       "specifications": {
 
-        "title": "Technical Specifications",
+  "title": "Technical Specifications",
 
-        "parameter": "Parameter",
+  "parameter": "Parameter",
 
-        "value": "Details",
+  "value": "Details",
 
-        "items": {
+  "values": {
+    "imaging": "Imaging Technology",
+    "ai": "AI Capability",
+    "application": "Application"
+  },
 
-          "model": "Model",
+  "items": {
 
-          "imaging": "Imaging Technology",
+    "model": "Model",
 
-          "ai": "AI Capability",
+    "imaging": "Imaging Technology",
 
-          "application": "Application"
+    "ai": "AI Capability",
 
-        }
+    "application": "Application"
 
-      },
+  }
+
+},
 
 
       "comparison": {
@@ -599,6 +626,1111 @@
 
   },
 
+"contact": {
+
+  "hero": {
+    "label": "Contact Us",
+    "title": "Build Intelligent Vision Solutions Together",
+    "description": "Connect with Youyang Intelligent Control for intelligent sensing solutions, technical consultation, and customized deployment support.",
+    "button": "Request Demo →"
+  },
+
+  "benefits": {
+    "title": "Why Work With Us?",
+
+    "items": {
+
+      "engineering": {
+        "title": "Engineering Expertise",
+        "description": "Work with our technical team to evaluate your environment and identify suitable intelligent sensing solutions."
+      },
+
+      "customized": {
+        "title": "Customized Solutions",
+        "description": "Receive deployment recommendations based on your application scenarios, coverage requirements, and project goals."
+      },
+
+      "support": {
+        "title": "End-to-End Support",
+        "description": "From initial consultation to implementation planning, our team supports your intelligent vision projects."
+      }
+
+    }
+  },
+
+
+  "information": {
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address"
+  },
+
+
+  "form": {
+
+    "title": "Request A Demo",
+
+    "description": "Tell us about your project requirements. Our team will contact you with suitable solution recommendations.",
+
+    "supportTitle": "Support Includes",
+
+    "support": {
+      "one": "Application requirement analysis",
+      "two": "Product recommendation",
+      "three": "Deployment consultation",
+      "four": "Project implementation support"
+    },
+
+
+    "fields": {
+      "name": "Full Name",
+      "company": "Company Name",
+      "email": "Business Email",
+      "phone": "Phone Number",
+      "country": "Country / Region",
+      "solution": "Select Solution Interest",
+      "product": "Select Product Interest",
+      "message": "Tell us about your requirements"
+    },
+
+
+    "sending": "Sending...",
+    "submit": "Submit Request →"
+
+  },
+
+
+  "solutions": {
+    "urban": "Urban Public Spaces",
+    "transportation": "Transportation Hubs & Critical Sites",
+    "campuses": "Campuses & Educational Institutions",
+    "healthcare": "Healthcare & Senior Care Facilities",
+    "security": "High-Security Facilities",
+    "industrial": "Commercial & Industrial Worksites"
+  },
+
+
+  "products": {
+    "sentinel": "360 Sentinel",
+    "dome": "Dome Watch",
+    "guardian": "Wide-area Guardian"
+  },
+
+
+  "messages": {
+    "success": "Thank you. Our team will contact you soon.",
+    "failed": "Submission failed. Please try again.",
+    "error": "Something went wrong."
+  }
+
+},
+
+"resources": {
+
+  "hero": {
+    "label": "Resources",
+    "title": "Knowledge Center For Intelligent Vision Systems",
+    "description": "Explore frequently asked questions and technical information about Youyang intelligent sensing solutions."
+  },
+
+
+  "faqTitle": "Frequently Asked Questions",
+
+
+  "faq": {
+
+    "ai": {
+
+      "category": "AI Edge Computing Capability",
+
+      "q1": {
+        "question": "Are AI target detection and recognition calculations performed at the device side or backend platform?",
+        "answer": "Target detection, classification, and positioning calculations are completed on the camera edge side. The AI system outputs structured recognition results in real time, reducing transmission latency and improving operational efficiency. Local AI analysis and alert functions remain available even during network interruption."
+      },
+
+      "q2": {
+        "question": "How does the system reduce AI false alarms and missed detections?",
+        "answer": "The system supports confidence threshold adjustment, region masking, time filtering, and target size filtering. Edge-side processing filters invalid alerts and only delivers effective events and structured data."
+      }
+
+    },
+
+
+    "management": {
+
+      "category": "Access & Operation Management",
+
+      "q1": {
+        "question": "Does accessing the device require dedicated client software?",
+        "answer": "No dedicated client software is required. Users can remotely preview video, configure parameters, and manage playback through a web browser on computers and tablets."
+      },
+
+      "q2": {
+        "question": "How can multiple devices be managed centrally?",
+        "answer": "Devices support permission management and integration with standard security platforms, enabling centralized management, scheduling, and coordinated alarm handling."
+      },
+
+      "q3": {
+        "question": "How are device firmware and algorithms upgraded?",
+        "answer": "Firmware and algorithm packages can be upgraded remotely through the web interface without on-site disassembly. Version rollback is supported to maintain system stability."
+      }
+
+    },
+
+
+    "integration": {
+
+      "category": "Platform Integration & Protocols",
+
+      "q1": {
+        "question": "Can Youyang devices integrate with existing security monitoring platforms?",
+        "answer": "Yes. The system supports integration with existing security platforms. Video streams, alarm events, and AI structured data can be transmitted to existing platforms without major system modifications."
+      },
+
+      "q2": {
+        "question": "Does private protocol platform integration require extensive development?",
+        "answer": "Standard protocol integration allows direct platform registration in most cases. Private protocol platforms require only limited adaptation instead of extensive secondary development."
+      }
+
+    },
+
+
+    "storage": {
+
+      "category": "Video Storage & Retrieval",
+
+      "q1": {
+        "question": "What storage methods are supported? Can recordings be searched by AI events?",
+        "answer": "The system supports NVR and server-based storage. Original video and AI structured metadata are stored together, allowing fast searches by target type, time, and alarm events."
+      },
+
+      "q2": {
+        "question": "Will panoramic devices consume excessive network bandwidth?",
+        "answer": "AI alarm structured data requires very low bandwidth. Video supports multiple stream configurations and adjustable bitrate settings according to network conditions."
+      }
+
+    },
+
+
+    "deployment": {
+
+      "category": "Deployment & Hardware Performance",
+
+      "q1": {
+        "question": "How large an area can one panoramic device cover and where can it be deployed?",
+        "answer": "High-position installation supports large outdoor environments such as ports, open mines, airports, industrial parks, and public areas. One device can replace multiple traditional cameras and reduce blind spots."
+      },
+
+      "q2": {
+        "question": "Does panoramic imaging have stitching gaps? Does it support PTZ camera linkage?",
+        "answer": "The system uses multi-camera real-time stitching correction algorithms to output seamless panoramic images. It supports ROI selection and linkage with PTZ cameras for detailed viewing."
+      }
+
+    },
+
+
+    "troubleshooting": {
+
+      "category": "Troubleshooting",
+
+      "q1": {
+        "question": "What are the troubleshooting steps when the device goes offline?",
+        "answer": "Check power supply and network connections first. Restart the device, verify IP address and VLAN configuration, and restore factory settings if necessary."
+      },
+
+      "q2": {
+        "question": "What should be checked if alarm events exist but cannot be received by the platform?",
+        "answer": "Check platform registration status, alarm configuration settings, and whether network firewall rules are blocking event transmission."
+      }
+
+    }
+
+  },
+
+
+  "downloads": {
+    "title": "Downloads",
+    "description": "Product brochures, manuals, and technical documents will be available here."
+  },
+
+
+  "whitepapers": {
+    "title": "White Papers",
+    "description": "Technical insights and industry research documents will be published here."
+  },
+
+
+  "comingSoon": "Coming Soon"
+
+},
+
+"solutions": {
+
+  "hero": {
+
+    "label": "Industry Solutions",
+
+    "title": "Intelligent Vision Solutions Across Critical Environments",
+
+    "description": "Youyang Intelligent Control combines panoramic sensing, edge AI computing, and intelligent recognition technology to support security, transportation, healthcare, education, and industrial applications."
+
+  },
+
+
+  "solutionLabel": "Solution",
+
+
+  "coverage": "Coverage",
+
+  "coreValue": "Core Value",
+
+  "explore": "Explore Solution",
+
+
+  "items": {
+
+    "urban": {
+
+      "title": "Urban Public Spaces",
+
+      "description": "Intelligent visual sensing solutions designed for civic spaces, public venues, and urban environments requiring continuous safety awareness.",
+
+      "coverage": "Civic squares, sports venues, city parks, municipal streets",
+
+      "value": "Supports crowd management, abnormal activity detection, emergency response, and intelligent public safety monitoring."
+
+    },
+
+
+    "transportation": {
+
+      "title": "Transportation Hubs & Critical Sites",
+
+      "description": "Advanced perception systems for airports, railway stations, metro stations, and other high-traffic transportation environments.",
+
+      "coverage": "Airports, railway stations, metro stations, coach stations",
+
+      "value": "Provides intelligent monitoring, restricted-area protection, personnel tracking, and operational safety management."
+
+    },
+
+
+    "campus": {
+
+      "title": "Campuses & Educational Institutions",
+
+      "description": "Intelligent protection solutions supporting safer learning environments through proactive visual awareness.",
+
+      "coverage": "Kindergartens, schools, universities",
+
+      "value": "Enhances campus security through perimeter protection, abnormal event detection, and intelligent safety management."
+
+    },
+
+
+    "healthcare": {
+
+      "title": "Healthcare & Senior Care Facilities",
+
+      "description": "Reliable intelligent monitoring solutions for healthcare facilities and environments requiring continuous protection.",
+
+      "coverage": "Hospitals, clinics, senior care facilities",
+
+      "value": "Supports critical-area monitoring, patient safety, emergency alerts, and intelligent healthcare protection."
+
+    },
+
+
+    "security": {
+
+      "title": "High-Security Facilities",
+
+      "description": "Advanced sensing solutions designed for sensitive environments requiring strict security management.",
+
+      "coverage": "Prisons, detention centers, museums, archives, libraries",
+
+      "value": "Provides intrusion detection, behavior analysis, and multi-layer intelligent security protection."
+
+    },
+
+
+    "industrial": {
+
+      "title": "Commercial & Industrial Worksites",
+
+      "description": "AI-powered visual intelligence solutions for factories, logistics parks, construction sites, and industrial environments.",
+
+      "coverage": "Factories, construction sites, logistics parks, commercial facilities",
+
+      "value": "Improves production safety, operational efficiency, and asset protection through intelligent perception."
+
+    }
+
+  },
+
+
+  "features": {
+
+    "crowd": "Crowd-density monitoring",
+
+    "behavior": "Abnormal behavior detection",
+
+    "awareness": "AI-powered situation awareness",
+
+
+    "intrusion": "Restricted-area intrusion detection",
+
+    "trajectory": "Personnel trajectory analysis",
+
+    "monitoring": "Large-area monitoring",
+
+
+    "perimeter": "Campus perimeter protection",
+
+    "safety": "Safety event detection",
+
+    "intelligent": "Intelligent monitoring",
+
+
+    "critical": "Critical-area monitoring",
+
+    "risk": "Safety risk detection",
+
+    "patient": "Patient protection awareness",
+
+
+    "asset": "Asset protection",
+
+
+    "hazard": "Hazard detection",
+
+    "security": "Industrial security awareness"
+
+  },
+
+
+  "architecture": {
+
+    "label": "Intelligent Ecosystem",
+
+    "title": "Intelligent Perception Architecture"
+
+  },
+
+
+  "productsTitle": "Solutions Powered By Our Products",
+
+
+  "products": {
+
+    "sentinel": {
+
+      "name": "360 Sentinel",
+
+      "description": "Compound-eye panoramic sensing system providing wide-area intelligent perception."
+
+    },
+
+
+    "dome": {
+
+      "name": "Dome Watch",
+
+      "description": "Panoramic monitoring system combining imaging technology and AI recognition."
+
+    },
+
+
+    "guardian": {
+
+      "name": "Wide-area Guardian",
+
+      "description": "Large-scale intelligent sensing solution for complex monitoring environments."
+
+    }
+
+  },
+
+
+  "cta": {
+
+    "title": "Build Intelligent Systems For Your Environment",
+
+    "description": "Contact Youyang Intelligent Control for customized intelligent sensing solutions.",
+
+    "button": "Request Demo"
+
+  }
+
+},
+
+"urbanPublicSpaces": {
+  "hero": {
+    "label": "Industry Solution",
+    "title": "Urban Public Spaces",
+    "description": "Intelligent visual sensing solutions for civic spaces, public venues, and urban environments requiring continuous awareness and efficient safety management.",
+    "button": "Request Demo"
+  },
+
+  "overview": {
+    "title": "Solution Overview",
+    "description": "Urban public spaces require intelligent monitoring capabilities to maintain safety, improve emergency response efficiency, and understand complex crowd environments. Youyang Intelligent Control combines panoramic sensing and AI-powered perception technology to provide continuous visual awareness across large public areas."
+  },
+
+  "challenges": {
+    "title": "Key Challenges",
+    "items": {
+      "crowd": "Crowd management in large public areas",
+      "abnormal": "Difficulty detecting abnormal activities in real time",
+      "blindspots": "Limited awareness caused by traditional monitoring blind spots",
+      "emergency": "Need for faster emergency response and public safety management"
+    }
+  },
+
+  "capabilities": {
+    "title": "Intelligent Capabilities",
+    "items": {
+      "crowdMonitoring": "Crowd-density monitoring and abnormal gathering alerts",
+      "fallDetection": "Fall and loitering detection",
+      "dangerousObject": "Dangerous-object recognition",
+      "wideArea": "Wide-area intelligent perception",
+      "securityAnalysis": "Real-time AI-assisted security analysis"
+    }
+  },
+
+  "applications": {
+    "title": "Application Areas",
+    "items": {
+      "squares": "City squares",
+      "sports": "Sports venues",
+      "parks": "Urban parks",
+      "streets": "Municipal streets"
+    }
+  },
+
+  "products": {
+    "title": "Recommended Products",
+    "sentinel": {
+      "name": "360 Sentinel",
+      "description": "Wide-area panoramic perception with AI-powered intelligent recognition."
+    },
+    "dome": {
+      "name": "Dome Watch",
+      "description": "Intelligent panoramic monitoring for complex scenes."
+    },
+    "guardian": {
+      "name": "Wide-area Guardian",
+      "description": "Large-scale situation awareness solution."
+    }
+  },
+
+  "cta": {
+    "title": "Build Safer Urban Environments",
+    "description": "Deploy intelligent perception solutions for modern public safety management.",
+    "button": "Contact Us"
+  }
+},
+
+"transportation": {
+
+  "hero": {
+    "label": "Industry Solution",
+    "title": "Transportation Hubs & Critical Sites",
+    "description": "Intelligent perception solutions designed for airports, railway stations, metro systems, and other critical transportation environments.",
+    "button": "Request Demo"
+  },
+
+  "overview": {
+    "title": "Solution Overview",
+    "description": "Transportation hubs require continuous monitoring and rapid response capabilities due to complex environments and large passenger volumes. Youyang intelligent sensing systems provide panoramic perception and AI-based analysis to improve safety and operational efficiency."
+  },
+
+  "challenges": {
+    "title": "Key Challenges",
+    "items": {
+      "security": "Managing security in high passenger-flow environments",
+      "awareness": "Limited awareness across large transportation areas",
+      "abnormal": "Difficulty detecting abnormal activities quickly",
+      "emergency": "Need for efficient emergency response and operational safety"
+    }
+  },
+
+  "capabilities": {
+    "title": "Intelligent Capabilities",
+    "items": {
+      "wideArea": "Wide-area intelligent monitoring",
+      "intrusion": "Restricted-area intrusion detection",
+      "trajectory": "Personnel trajectory tracking",
+      "recognition": "AI-powered target recognition",
+      "situation": "Real-time situation awareness"
+    }
+  },
+
+  "applications": {
+    "title": "Application Areas",
+    "items": {
+      "airports": "Airports",
+      "railway": "High-speed railway stations",
+      "metro": "Metro stations",
+      "coach": "Coach stations"
+    }
+  },
+
+  "products": {
+    "title": "Recommended Products",
+    "sentinel": {
+      "name": "360 Sentinel"
+    },
+    "dome": {
+      "name": "Dome Watch"
+    },
+    "guardian": {
+      "name": "Wide-area Guardian"
+    }
+  },
+
+  "cta": {
+    "title": "Safer Intelligent Transportation Systems",
+    "description": "Deploy advanced sensing technology for transportation security and operational awareness.",
+    "button": "Contact Us"
+  }
+
+},
+
+"campuses": {
+
+  "hero": {
+    "label": "Industry Solution",
+    "title": "Campuses & Educational Institutions",
+    "description": "Intelligent sensing solutions designed to create safer learning environments through continuous monitoring and AI-powered security awareness.",
+    "button": "Request Demo"
+  },
+
+  "overview": {
+    "title": "Solution Overview",
+    "description": "Educational institutions require reliable security systems to protect students, staff, and campus infrastructure. Youyang intelligent perception technology provides continuous monitoring, intelligent analysis, and rapid awareness of security events."
+  },
+
+  "challenges": {
+    "title": "Key Challenges",
+    "items": {
+      "safety": "Ensuring safety across large campus environments",
+      "monitoring": "Difficulty monitoring multiple areas simultaneously",
+      "response": "Need for faster response to abnormal events",
+      "protection": "Protecting students, staff, and campus facilities"
+    }
+  },
+
+  "capabilities": {
+    "title": "Intelligent Capabilities",
+    "items": {
+      "campusMonitoring": "Campus-wide intelligent monitoring",
+      "perimeter": "Perimeter intrusion detection",
+      "behavior": "Abnormal behavior recognition",
+      "awareness": "Wide-area situation awareness",
+      "security": "AI-assisted security management"
+    }
+  },
+
+  "applications": {
+    "title": "Application Areas",
+    "items": {
+      "universities": "Universities",
+      "schools": "Schools",
+      "training": "Training institutions",
+      "campuses": "Educational campuses"
+    }
+  },
+
+  "products": {
+    "title": "Recommended Products",
+    "sentinel": "360 Sentinel",
+    "dome": "Dome Watch",
+    "guardian": "Wide-area Guardian"
+  },
+
+  "cta": {
+    "title": "Building Safer Learning Environments",
+    "description": "Improve campus security with intelligent perception and AI-powered monitoring solutions.",
+    "button": "Contact Us"
+  }
+
+},
+
+ "healthcare": {
+
+  "hero": {
+    "label": "Industry Solution",
+    "title": "Healthcare & Senior Care Facilities",
+    "description": "Intelligent monitoring solutions designed for healthcare environments requiring reliable awareness, safety management, and continuous protection.",
+    "button": "Request Demo"
+  },
+
+  "overview": {
+    "title": "Solution Overview",
+    "description": "Healthcare and senior care facilities require dependable monitoring systems to support safety, operational management, and emergency response. Youyang intelligent sensing solutions provide comprehensive visual awareness through AI-powered perception technology."
+  },
+
+  "challenges": {
+    "title": "Key Challenges",
+    "items": {
+      "safety": "Maintaining safety in sensitive healthcare environments",
+      "monitoring": "Monitoring critical areas continuously",
+      "response": "Responding quickly to unexpected situations",
+      "protection": "Protecting patients, visitors, and staff"
+    }
+  },
+
+  "capabilities": {
+    "title": "Intelligent Capabilities",
+    "items": {
+      "critical": "Critical-area intelligent monitoring",
+      "abnormal": "Abnormal event detection",
+      "awareness": "AI-based situation awareness",
+      "visual": "Large-area visual perception",
+      "security": "Security management support"
+    }
+  },
+
+  "applications": {
+    "title": "Application Areas",
+    "items": {
+      "hospitals": "Hospitals",
+      "medical": "Medical centers",
+      "clinics": "Clinics",
+      "senior": "Senior care facilities"
+    }
+  },
+
+  "products": {
+    "title": "Recommended Products",
+    "sentinel": "360 Sentinel",
+    "dome": "Dome Watch",
+    "guardian": "Wide-area Guardian"
+  }
+
+},
+
+"highSecurity": {
+
+  "hero": {
+    "label": "Industry Solution",
+    "title": "High-Security Facilities",
+    "description": "Advanced intelligent sensing solutions designed for sensitive environments requiring reliable security protection and continuous monitoring.",
+    "button": "Request Demo"
+  },
+
+
+  "overview": {
+    "title": "Solution Overview",
+    "description": "High-security environments require accurate perception, rapid response, and reliable protection. Youyang intelligent sensing systems combine panoramic imaging and AI analysis to provide continuous security awareness."
+  },
+
+
+  "challenges": {
+
+    "title": "Key Challenges",
+
+    "items": {
+
+      "access": "Protecting sensitive areas from unauthorized access",
+
+      "environment": "Monitoring complex security environments continuously",
+
+      "blindspots": "Reducing blind spots in traditional surveillance systems",
+
+      "response": "Improving response efficiency for security events"
+
+    }
+
+  },
+
+
+
+  "capabilities": {
+
+    "title": "Intelligent Capabilities",
+
+    "items": {
+
+      "intrusion": "Perimeter intrusion detection",
+
+      "behavior": "AI-powered behavior analysis",
+
+      "monitoring": "Wide-area security monitoring",
+
+      "asset": "Critical asset protection",
+
+      "awareness": "Intelligent situation awareness"
+
+    }
+
+  },
+
+
+
+  "applications": {
+
+    "title": "Application Areas",
+
+    "items": {
+
+      "museums": "Museums",
+
+      "archives": "Archives",
+
+      "government": "Government facilities",
+
+      "protected": "High-security protected areas"
+
+    }
+
+  },
+
+
+
+  "products": {
+
+    "title": "Recommended Products",
+
+    "sentinel": "360 Sentinel",
+
+    "dome": "Dome Watch",
+
+    "guardian": "Wide-area Guardian"
+
+  }
+
+},
+
+"industrial": {
+
+  "hero": {
+    "label": "Industry Solution",
+    "title": "Commercial & Industrial Worksites",
+    "description": "AI-powered visual intelligence solutions for factories, logistics facilities, construction sites, and industrial environments.",
+    "button": "Request Demo"
+  },
+
+
+  "overview": {
+    "title": "Solution Overview",
+    "description": "Industrial environments require reliable monitoring systems to improve safety, protect assets, and optimize operations. Youyang intelligent perception solutions provide continuous visual awareness through AI-powered monitoring technology."
+  },
+
+
+  "challenges": {
+
+    "title": "Key Challenges",
+
+    "items": {
+
+      "safety": "Maintaining safety across complex industrial environments",
+
+      "monitoring": "Monitoring large operational areas efficiently",
+
+      "risk": "Reducing workplace risks and unsafe activities",
+
+      "visibility": "Improving security and operational visibility"
+
+    }
+
+  },
+
+
+
+  "capabilities": {
+
+    "title": "Intelligent Capabilities",
+
+    "items": {
+
+      "industrial": "Industrial safety monitoring",
+
+      "hazard": "Hazard detection",
+
+      "analysis": "AI-powered visual analysis",
+
+      "perception": "Large-area perception",
+
+      "awareness": "Operational environment awareness"
+
+    }
+
+  },
+
+
+
+  "applications": {
+
+    "title": "Application Areas",
+
+    "items": {
+
+      "factories": "Factories",
+
+      "logistics": "Logistics parks",
+
+      "construction": "Construction sites",
+
+      "facilities": "Industrial facilities"
+
+    }
+
+  },
+
+
+
+  "products": {
+
+    "title": "Recommended Products",
+
+    "sentinel": "360 Sentinel",
+
+    "dome": "Dome Watch",
+
+    "guardian": "Wide-area Guardian"
+
+  }
+
+},
+
+"adminLogin": {
+  "title": "Admin Command Center",
+  "description": "Secure access portal for Youyang Intelligent Control",
+  "email": "Admin Email",
+  "password": "Password",
+  "authenticating": "Authenticating...",
+  "button": "Enter Dashboard →",
+  "invalid": "Invalid email or password",
+  "protected": "Protected Enterprise Management System"
+},
+
+"adminDashboard": {
+  "overview": "Intelligence Overview",
+
+  "inquiries": {
+    "title": "Inquiries",
+    "description": "Manage customer requests and leads."
+  },
+
+  "products": {
+    "title": "Products",
+    "description": "Monitor intelligent vision products."
+  },
+
+  "analytics": {
+    "title": "Analytics",
+    "description": "Track system performance and users."
+  }
+},
+
+"adminSidebar": {
+
+  "subtitle": "AI Command Center",
+
+  "menu": {
+    "command": "Command Center",
+    "inquiries": "Inquiries",
+    "products": "Products",
+    "analytics": "Analytics",
+    "users": "Users",
+    "settings": "Settings"
+  },
+
+  "status": "System Status",
+
+  "online": "ONLINE",
+
+  "infrastructure": "Youyang AI Infrastructure"
+
+},
+
+"adminHeader": {
+  "title": "Youyang AI Command Center",
+  "morning": "Good Morning",
+  "afternoon": "Good Afternoon",
+  "evening": "Good Evening",
+  "online": "ALL SYSTEMS ONLINE",
+  "logout": "Logout"
+},
+
+"visionCore": {
+  "title": "AI VISION CORE",
+  "subtitle": "REAL TIME INTELLIGENCE ENGINE"
+},
+
+"liveStats": {
+  "loading": "Loading system data...",
+  "total": "Total Inquiries",
+  "leads": "New Leads",
+  "system": "System",
+  "online": "ONLINE"
+},
+
+"systemMonitor": {
+  "title": "System Intelligence",
+  "database": "Database Connected",
+  "api": "API Gateway Active",
+  "authentication": "Authentication Secure",
+  "engine": "AI Engine Running"
+},
+
+"recentActivity": {
+  "title": "Recent Intelligence Activity",
+  "empty": "No inquiries yet",
+  "individual": "Individual",
+  "product": "Product:",
+  "solution": "Solution:",
+  "notSelected": "Not selected"
+},
+
+"inquiryCRM": {
+  "loading": "Loading CRM...",
+  "title": "Inquiry Intelligence CRM",
+  "subtitle": "Lead Management System",
+  "search": "Search name, email, company...",
+  "noCompany": "No company",
+  "updated": "Inquiry updated successfully",
+  "updateFailed": "Update failed",
+  "confirmDelete": "Delete this inquiry?",
+  "deleted": "Inquiry deleted",
+  "deleteFailed": "Delete failed",
+  "details": "Lead Details",
+  "name": "Name",
+  "email": "Email",
+  "country": "Country",
+  "product": "Product",
+  "solution": "Solution",
+  "status": "Status",
+  "priority": "Priority",
+  "note": "Admin Note",
+  "saving": "Saving...",
+  "save": "Save Changes",
+  "delete": "Delete Inquiry"
+},
+
+"productsAdmin": {
+
+  "title": "Product Intelligence Center",
+
+  "subtitle": "Manage Youyang products",
+
+  "addProduct": "Add Product",
+
+  "editProduct": "Edit Product",
+
+  "save": "Save Product",
+
+  "edit": "Edit",
+
+  "delete": "Delete",
+
+  "deleteConfirm": "Delete product?",
+
+
+  "fields": {
+
+    "name": "Product Name",
+
+    "slug": "Slug",
+
+    "category": "Category",
+
+    "shortDescription": "Short Description",
+
+    "description": "Description",
+
+    "features": "Features comma separated"
+
+  }
+
+},
+
+"analyticsAdmin": {
+  "loading": "Loading Analytics...",
+  "title": "Analytics Intelligence Center",
+  "subtitle": "Business Performance Overview",
+  "productInterest": "Product Interest",
+  "countries": "Countries",
+  "recentLeads": "Recent Leads"
+},
+
+"settingsAdmin": {
+
+  "loading": "Loading...",
+
+  "title": "Settings",
+
+  "description": "Manage system preferences and account settings",
+
+  "account": "Account",
+
+  "name": "Name",
+
+  "email": "Email",
+
+  "security": "Security",
+
+  "session": "Manage your admin session",
+
+  "logout": "Logout",
+
+  "language": "Language",
+
+  "languageDescription": "Choose dashboard language",
+
+  "system": "System",
+
+  "online": "System Online",
+
+  "commandCenter": "Youyang AI Command Center"
+
+},
+
+"usersAdmin": {
+
+  "loading": "Loading...",
+
+  "title": "User Management Center",
+
+  "subtitle": "Manage Admin Access & Roles",
+
+  "create": "Create User",
+
+  "name": "Name",
+
+  "email": "Email",
+
+  "password": "Password",
+
+  "createButton": "Create User",
+
+  "delete": "Delete"
+
+},
+
+"analyticsCards": {
+  "total": "Total Inquiries",
+  "leads": "New Leads",
+  "contacted": "Contacted",
+  "completed": "Completed"
+},
+
+"statPanel": {
+  "systems": "AI Systems Online",
+  "inquiries": "New Inquiries",
+  "projects": "Active Projects",
+  "status": "Detection Status"
+},
+
+"systemStatus": {
+  "title": "System Status",
+  "engine": "AI Recognition Engine Active",
+  "database": "Database Connected",
+  "network": "Vision Network Online",
+  "security": "Security Layer Enabled"
+},
 
   "footer": {
 

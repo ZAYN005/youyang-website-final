@@ -182,45 +182,6 @@ className="w-full object-contain"
 
 
 
-
-
-<section className="pb-20">
-
-<Container>
-
-<div className="rounded-3xl bg-navy p-10 text-white">
-
-
-<h2 className="text-3xl font-bold">
-Build Intelligent Vision Solutions
-</h2>
-
-
-<p className="mt-4 text-slate-300">
-Contact our engineering team for customized solutions.
-</p>
-
-
-<div className="mt-6">
-
-<Button href="/contact">
-Request Demo →
-</Button>
-
-
-</div>
-
-
-</div>
-
-
-</Container>
-
-
-</section>
-
-
-
 </main>
 
 

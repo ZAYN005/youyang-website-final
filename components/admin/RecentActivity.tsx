@@ -1,9 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
+
 
 
 export default function RecentActivity(){
+
+
+const t = useTranslations("recentActivity");
 
 
 const [items,setItems] = useState<any[]>([]);
@@ -28,7 +33,9 @@ setItems(data.recent || []);
 
 
 
+
 return (
+
 
 <div className="
 mt-10
@@ -42,14 +49,21 @@ text-white
 ">
 
 
+
+
+
 <h2 className="
 text-2xl
 font-bold
 ">
 
-Recent Intelligence Activity
+{t("title")}
 
 </h2>
+
+
+
+
 
 
 
@@ -59,15 +73,23 @@ space-y-4
 ">
 
 
+
+
+
 {
 items.length === 0 ? (
 
+
 <p className="text-slate-400">
-No inquiries yet
+
+{t("empty")}
+
 </p>
 
 
+
 ) : (
+
 
 
 items.map((item)=>(
@@ -85,8 +107,8 @@ bg-black/20
 p-5
 "
 
-
 >
+
 
 
 <div className="
@@ -95,11 +117,15 @@ justify-between
 ">
 
 
+
 <h3 className="font-bold">
 
 🟢 {item.name}
 
 </h3>
+
+
+
 
 
 <span className="
@@ -113,41 +139,62 @@ text-slate-400
 </span>
 
 
+
+
 </div>
+
+
+
+
 
 
 
 <p className="mt-2 text-slate-400">
 
-{item.company || "Individual"}
+{item.company || t("individual")}
 
 </p>
+
+
+
+
 
 
 
 <p className="mt-2">
 
-Product:
+{t("product")}
+
 {" "}
 
-{item.productInterest || "Not selected"}
+{item.productInterest || t("notSelected")}
 
 </p>
+
+
+
+
 
 
 
 <p>
 
-Solution:
+{t("solution")}
+
 {" "}
 
-{item.solutionInterest || "Not selected"}
+{item.solutionInterest || t("notSelected")}
 
 </p>
 
 
 
+
+
+
+
 </div>
+
 
 
 ))
@@ -155,14 +202,23 @@ Solution:
 
 )
 
+
+
 }
 
 
-</div>
 
 
 
 </div>
+
+
+
+
+
+</div>
+
+
 
 );
 

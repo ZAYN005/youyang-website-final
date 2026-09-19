@@ -1,32 +1,38 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
+
+export default function StatPanel(){
+
+
+const t = useTranslations("statPanel");
+
 
 const stats=[
 
 {
- title:"AI Systems Online",
- value:"128"
+key:"systems",
+value:"128"
 },
 
 {
- title:"New Inquiries",
- value:"24"
+key:"inquiries",
+value:"24"
 },
 
 {
- title:"Active Projects",
- value:"18"
+key:"projects",
+value:"18"
 },
 
 {
- title:"Detection Status",
- value:"ONLINE"
+key:"status",
+value:"ONLINE"
 }
 
 ];
 
-
-export default function StatPanel(){
 
 
 return (
@@ -40,8 +46,11 @@ md:grid-cols-4
 
 {stats.map((item)=>(
 
+
 <div
-key={item.title}
+
+key={item.key}
+
 className="
 rounded-3xl
 border
@@ -50,6 +59,7 @@ bg-white/5
 p-6
 backdrop-blur-xl
 "
+
 >
 
 
@@ -58,9 +68,10 @@ text-sm
 text-slate-400
 ">
 
-{item.title}
+{t(item.key)}
 
 </p>
+
 
 
 <h2 className="
@@ -76,6 +87,7 @@ text-white
 
 
 </div>
+
 
 ))}
 

@@ -1,15 +1,20 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+
+
 export default function SystemMonitor(){
+
+
+const t = useTranslations("systemMonitor");
 
 
 const systems=[
 
-"Database Connected",
-
-"API Gateway Active",
-
-"Authentication Secure",
-
-"AI Engine Running"
+"database",
+"api",
+"authentication",
+"engine"
 
 ];
 
@@ -32,7 +37,7 @@ text-2xl
 font-bold
 ">
 
-System Intelligence
+{t("title")}
 
 </h2>
 
@@ -48,6 +53,7 @@ mt-6
 
 {
 systems.map(item=>(
+
 
 <div
 
@@ -76,7 +82,7 @@ text-xl
 
 <p className="mt-3">
 
-{item}
+{t(item)}
 
 </p>
 
@@ -85,6 +91,7 @@ text-xl
 
 
 ))
+
 }
 
 

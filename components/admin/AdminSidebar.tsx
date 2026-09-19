@@ -2,37 +2,35 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 
 const menu = [
 
 {
-name:"Command Center",
+key:"command",
 link:"/admin/dashboard"
 },
 
 {
-name:"Inquiries",
+key:"inquiries",
 link:"/admin/inquiries"
 },
 
-{
-name:"Products",
-link:"/admin/products"
-},
+
 
 {
-name:"Analytics",
+key:"analytics",
 link:"/admin/analytics"
 },
 
 {
-name:"Users",
+key:"users",
 link:"/admin/users"
 },
 
 {
-name:"Settings",
+key:"settings",
 link:"/admin/settings"
 }
 
@@ -44,6 +42,8 @@ export default function AdminSidebar(){
 
 
 const pathname = usePathname();
+
+const t = useTranslations("adminSidebar");
 
 
 
@@ -92,7 +92,7 @@ text-sm
 text-slate-400
 "
 >
-AI Command Center
+{t("subtitle")}
 </p>
 
 
@@ -120,17 +120,24 @@ menu.map((item)=>(
 
 <Link
 
-key={item.name}
+key={item.key}
 
 href={item.link}
 
 className={`
+
 block
+
 rounded-xl
+
 p-4
+
 transition-all
+
 duration-300
+
 border
+
 ${
 pathname === item.link
 ?
@@ -138,6 +145,7 @@ pathname === item.link
 :
 "border-transparent text-slate-300 hover:bg-white/5 hover:text-cyan-400"
 }
+
 `}
 
 >
@@ -151,7 +159,7 @@ justify-between
 
 
 <span>
-{item.name}
+{t(`menu.${item.key}`)}
 </span>
 
 
@@ -201,7 +209,7 @@ uppercase
 tracking-widest
 "
 >
-System Status
+{t("status")}
 </p>
 
 
@@ -213,7 +221,7 @@ text-green-400
 font-bold
 "
 >
-● ONLINE
+● {t("online")}
 </p>
 
 
@@ -224,7 +232,7 @@ text-xs
 text-slate-500
 "
 >
-Youyang AI Infrastructure
+{t("infrastructure")}
 </p>
 
 

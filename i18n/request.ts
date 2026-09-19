@@ -17,6 +17,8 @@ export default getRequestConfig(async ({requestLocale})=>{
 
     locale: currentLocale,
 
+    timeZone: "Asia/Shanghai",
+
     messages:
       (
         await import(`../messages/${currentLocale}.json`)

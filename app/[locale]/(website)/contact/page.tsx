@@ -1,51 +1,46 @@
 "use client";
 
 import { useState } from "react";
-import type { Metadata } from "next";
+import { useTranslations } from "next-intl";
 
 import Container from "@/components/ui/Container";
 import { siteConfig } from "@/config/site";
 
 
-
 const benefits = [
   {
-    title: "Engineering Expertise",
-    description:
-      "Work with our technical team to evaluate your environment and identify suitable intelligent sensing solutions.",
+    key: "engineering",
   },
   {
-    title: "Customized Solutions",
-    description:
-      "Receive deployment recommendations based on your application scenarios, coverage requirements, and project goals.",
+    key: "customized",
   },
   {
-    title: "End-to-End Support",
-    description:
-      "From initial consultation to implementation planning, our team supports your intelligent vision projects.",
+    key: "support",
   },
 ];
 
 
 const solutions = [
-  "Urban Public Spaces",
-  "Transportation Hubs & Critical Sites",
-  "Campuses & Educational Institutions",
-  "Healthcare & Senior Care Facilities",
-  "High-Security Facilities",
-  "Commercial & Industrial Worksites",
+  "urban",
+  "transportation",
+  "campuses",
+  "healthcare",
+  "security",
+  "industrial",
 ];
 
 
 const products = [
-  "360 Sentinel",
-  "Dome Watch",
-  "Wide-area Guardian",
+  "sentinel",
+  "dome",
+  "guardian",
 ];
 
 
-
 export default function ContactPage() {
+
+
+  const t = useTranslations("contact");
 
 
   const [loading, setLoading] = useState(false);
@@ -53,16 +48,16 @@ export default function ContactPage() {
 
   const [formData, setFormData] = useState({
 
-  name: "",
-  company: "",
-  email: "",
-  phone: "",
-  country: "",
-  solutionInterest: "",
-  productInterest: "",
-  message: "",
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    country: "",
+    solutionInterest: "",
+    productInterest: "",
+    message: "",
 
-});
+  });
 
 
 
@@ -97,41 +92,43 @@ export default function ContactPage() {
 
 
         alert(
-          "Thank you. Our team will contact you soon."
+          t("messages.success")
         );
 
 
         setFormData({
 
-        name: "",
-        company: "",
-        email: "",
-        phone: "",
-        country: "",
-        solutionInterest: "",
-        productInterest: "",
-        message: "",
+          name: "",
+          company: "",
+          email: "",
+          phone: "",
+          country: "",
+          solutionInterest: "",
+          productInterest: "",
+          message: "",
 
-});
+        });
+
 
       } else {
 
+
         alert(
-          "Submission failed. Please try again."
+          t("messages.failed")
         );
+
 
       }
 
 
-
-    } catch (error) {
+    } catch(error) {
 
 
       console.error(error);
 
 
       alert(
-        "Something went wrong."
+        t("messages.error")
       );
 
 
@@ -143,7 +140,6 @@ export default function ContactPage() {
 
 
   };
-
 
 
 
@@ -163,7 +159,6 @@ export default function ContactPage() {
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
 
 
-
             <div>
 
 
@@ -178,7 +173,6 @@ export default function ContactPage() {
 
 
                 <div className="leading-tight">
-
 
                   <p className="text-2xl font-bold">
                     YOUYANG
@@ -198,15 +192,16 @@ export default function ContactPage() {
 
 
               <p className="mt-10 text-sm uppercase tracking-[0.3em] text-tech-cyan">
-                Contact Us
+
+                {t("hero.label")}
+
               </p>
 
 
 
               <h1 className="mt-5 text-5xl font-bold leading-tight">
 
-                Build Intelligent
-                Vision Solutions Together
+                {t("hero.title")}
 
               </h1>
 
@@ -214,9 +209,7 @@ export default function ContactPage() {
 
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-300">
 
-                Connect with Youyang Intelligent Control for
-                intelligent sensing solutions, technical
-                consultation, and customized deployment support.
+                {t("hero.description")}
 
               </p>
 
@@ -229,7 +222,9 @@ export default function ContactPage() {
                   href="#contact-form"
                   className="rounded-md bg-gold px-7 py-3 font-semibold text-navy"
                 >
-                  Request Demo →
+
+                  {t("hero.button")}
+
                 </a>
 
 
@@ -237,34 +232,35 @@ export default function ContactPage() {
 
 
             </div>
-
-
-
-
-
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-10">
+                        <div className="rounded-3xl border border-white/10 bg-white/5 p-10">
 
 
               <h2 className="text-2xl font-bold">
-                Why Work With Us?
+
+                {t("benefits.title")}
+
               </h2>
 
 
               <div className="mt-8 space-y-6">
 
 
-                {benefits.map((item)=>(
+                {benefits.map((item) => (
 
-                  <div key={item.title}>
+                  <div key={item.key}>
 
 
                     <h3 className="font-bold text-white">
-                      {item.title}
+
+                      {t(`benefits.items.${item.key}.title`)}
+
                     </h3>
 
 
                     <p className="mt-2 text-slate-300">
-                      {item.description}
+
+                      {t(`benefits.items.${item.key}.description`)}
+
                     </p>
 
 
@@ -305,12 +301,18 @@ export default function ContactPage() {
             <div>
 
               <h3 className="font-bold text-navy">
-                Email
+
+                {t("information.email")}
+
               </h3>
 
+
               <p className="mt-2 text-text-muted">
+
                 {siteConfig.contact.email}
+
               </p>
+
 
             </div>
 
@@ -319,27 +321,38 @@ export default function ContactPage() {
             <div>
 
               <h3 className="font-bold text-navy">
-                Phone
+
+                {t("information.phone")}
+
               </h3>
 
+
               <p className="mt-2 text-text-muted">
+
                 {siteConfig.contact.phone}
+
               </p>
 
+
             </div>
-            
-            
+
 
 
             <div>
 
               <h3 className="font-bold text-navy">
-                Address
+
+                {t("information.address")}
+
               </h3>
 
+
               <p className="mt-2 text-text-muted">
+
                 {siteConfig.contact.address}
+
               </p>
+
 
             </div>
 
@@ -376,7 +389,7 @@ export default function ContactPage() {
 
               <h2 className="text-3xl font-bold text-navy">
 
-                Request A Demo
+                {t("form.title")}
 
               </h2>
 
@@ -384,9 +397,7 @@ export default function ContactPage() {
 
               <p className="mt-4 text-text-muted">
 
-                Tell us about your project requirements.
-                Our team will contact you with suitable
-                solution recommendations.
+                {t("form.description")}
 
               </p>
 
@@ -397,26 +408,32 @@ export default function ContactPage() {
 
 
                 <h3 className="font-bold text-navy">
-                  Support Includes
+
+                  {t("form.supportTitle")}
+
                 </h3>
 
 
                 <ul className="mt-5 space-y-3 text-text-muted">
 
-                  <li>
-                    ✓ Application requirement analysis
-                  </li>
 
                   <li>
-                    ✓ Product recommendation
+                    ✓ {t("form.support.one")}
                   </li>
 
-                  <li>
-                    ✓ Deployment consultation
-                  </li>
 
                   <li>
-                    ✓ Project implementation support
+                    ✓ {t("form.support.two")}
+                  </li>
+
+
+                  <li>
+                    ✓ {t("form.support.three")}
+                  </li>
+
+
+                  <li>
+                    ✓ {t("form.support.four")}
                   </li>
 
 
@@ -442,165 +459,237 @@ export default function ContactPage() {
 
 
                 <input
-                  placeholder="Full Name"
+
+                  placeholder={t("form.fields.name")}
+
                   value={formData.name}
+
                   onChange={(e)=>setFormData({
+
                     ...formData,
+
                     name:e.target.value
+
                   })}
+
                   className="w-full rounded-lg border px-4 py-3"
+
                 />
 
 
 
                 <input
-                  placeholder="Company Name"
+
+                  placeholder={t("form.fields.company")}
+
                   value={formData.company}
+
                   onChange={(e)=>setFormData({
+
                     ...formData,
+
                     company:e.target.value
+
                   })}
+
                   className="w-full rounded-lg border px-4 py-3"
+
                 />
 
 
 
                 <input
-                  placeholder="Business Email"
+
+                  placeholder={t("form.fields.email")}
+
                   value={formData.email}
+
                   onChange={(e)=>setFormData({
+
                     ...formData,
+
                     email:e.target.value
+
                   })}
+
                   className="w-full rounded-lg border px-4 py-3"
+
                 />
 
 
 
                 <input
-                  placeholder="Phone Number"
+
+                  placeholder={t("form.fields.phone")}
+
                   value={formData.phone}
+
                   onChange={(e)=>setFormData({
+
                     ...formData,
+
                     phone:e.target.value
+
                   })}
+
                   className="w-full rounded-lg border px-4 py-3"
+
                 />
-                
+
+
+
                 <input
-                 placeholder="Country / Region"
-                 value={formData.country}
-                 onChange={(e)=>setFormData({
-                   ...formData,
-                  country:e.target.value
-                 })}
+
+                  placeholder={t("form.fields.country")}
+
+                  value={formData.country}
+
+                  onChange={(e)=>setFormData({
+
+                    ...formData,
+
+                    country:e.target.value
+
+                  })}
+
                   className="w-full rounded-lg border px-4 py-3"
-                 />
+
+                />
+                                <select
+
+                  value={formData.solutionInterest}
+
+                  onChange={(e)=>
+                    setFormData({
+                      ...formData,
+                      solutionInterest:e.target.value
+                    })
+                  }
+
+                  className="w-full rounded-lg border px-4 py-3"
+
+                >
+
+
+                  <option value="">
+
+                    {t("form.fields.solution")}
+
+                  </option>
+
+
+                  {solutions.map((item)=>(
+
+                    <option
+                      key={item}
+                      value={item}
+                    >
+
+                      {t(`solutions.${item}`)}
+
+                    </option>
+
+                  ))}
+
+
+                </select>
+
+
+
 
 
                 <select
-  value={formData.solutionInterest}
-  onChange={(e) =>
-    setFormData({
-      ...formData,
-      solutionInterest: e.target.value,
-    })
-  }
-  className="w-full rounded-lg border px-4 py-3"
->
 
-  <option value="">
-    Select Solution Interest
-  </option>
+                  value={formData.productInterest}
 
+                  onChange={(e)=>
+                    setFormData({
+                      ...formData,
+                      productInterest:e.target.value
+                    })
+                  }
 
-  {solutions.map((item) => (
+                  className="w-full rounded-lg border px-4 py-3"
 
-    <option key={item} value={item}>
-      {item}
-    </option>
-
-  ))}
+                >
 
 
-</select>
+                  <option value="">
+
+                    {t("form.fields.product")}
+
+                  </option>
 
 
+                  {products.map((item)=>(
 
-<select
-  value={formData.productInterest}
-  onChange={(e) =>
-    setFormData({
-      ...formData,
-      productInterest: e.target.value,
-    })
-  }
-  className="w-full rounded-lg border px-4 py-3"
->
+                    <option
+                      key={item}
+                      value={item}
+                    >
 
-  <option value="">
-    Select Product Interest
-  </option>
+                      {t(`products.${item}`)}
+
+                    </option>
+
+                  ))}
 
 
-  {products.map((item) => (
-
-    <option key={item} value={item}>
-      {item}
-    </option>
-
-  ))}
-
-
-</select>
+                </select>
 
 
 
-<textarea
-
-  rows={5}
-
-  placeholder="Tell us about your requirements"
-
-  value={formData.message}
-
-  onChange={(e) =>
-    setFormData({
-      ...formData,
-      message: e.target.value,
-    })
-  }
-
-  className="w-full rounded-lg border px-4 py-3"
-
-/>
 
 
+                <textarea
 
-<button
+                  rows={5}
 
-  type="submit"
+                  placeholder={t("form.fields.message")}
 
-  disabled={loading}
+                  value={formData.message}
 
-  className="w-full rounded-lg bg-gold py-3 font-semibold text-navy"
+                  onChange={(e)=>
+                    setFormData({
 
->
+                      ...formData,
 
-  {loading
-    ? "Sending..."
-    : "Submit Request →"
-  }
+                      message:e.target.value
+
+                    })
+                  }
+
+                  className="w-full rounded-lg border px-4 py-3"
+
+                />
 
 
-</button>
+
+
+
+                <button
+
+                  type="submit"
+
+                  disabled={loading}
+
+                  className="w-full rounded-lg bg-gold py-3 font-semibold text-navy"
+
+                >
+
+                  {loading
+                    ? t("form.sending")
+                    : t("form.submit")
+                  }
+
+
+                </button>
 
 
               </form>
 
 
             </div>
-
 
 
           </div>

@@ -1,4 +1,24 @@
-export default function SystemStatus(){
+import { getTranslations } from "next-intl/server";
+
+
+export default async function SystemStatus(){
+
+
+const t = await getTranslations("systemStatus");
+
+
+
+const systems=[
+
+"engine",
+
+"database",
+
+"network",
+
+"security"
+
+];
 
 
 return (
@@ -19,9 +39,10 @@ text-xl
 font-bold
 ">
 
-System Status
+{t("title")}
 
 </h2>
+
 
 
 
@@ -31,27 +52,19 @@ space-y-4
 ">
 
 
-<p>
-🟢 AI Recognition Engine Active
+{systems.map(item=>(
+
+<p key={item}>
+
+🟢 {t(item)}
+
 </p>
 
-
-<p>
-🟢 Database Connected
-</p>
-
-
-<p>
-🟢 Vision Network Online
-</p>
-
-
-<p>
-🟢 Security Layer Enabled
-</p>
+))}
 
 
 </div>
+
 
 
 </div>

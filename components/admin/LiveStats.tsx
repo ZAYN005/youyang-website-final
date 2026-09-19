@@ -1,9 +1,14 @@
 "use client";
 
 import {useEffect,useState} from "react";
+import { useTranslations } from "next-intl";
+
 
 
 export default function LiveStats(){
+
+
+const t = useTranslations("liveStats");
 
 
 const [data,setData]=useState<any>(null);
@@ -24,12 +29,16 @@ fetch("/api/admin/stats")
 
 
 
+
+
 if(!data){
 
 return (
 
 <div className="text-white">
-Loading system data...
+
+{t("loading")}
+
 </div>
 
 )
@@ -38,27 +47,31 @@ Loading system data...
 
 
 
+
+
 const cards=[
 
 {
-title:"Total Inquiries",
+title:t("total"),
 value:data.total
 },
 
 {
-title:"New Leads",
+title:t("leads"),
 value:data.newLeads
 },
 
 {
-title:"System",
-value:"ONLINE"
+title:t("system"),
+value:t("online")
 }
 
 ];
 
 
+
 return (
+
 
 <div className="
 grid
@@ -67,10 +80,16 @@ gap-6
 ">
 
 
+
+
+
 {cards.map(card=>(
 
+
 <div
+
 key={card.title}
+
 className="
 rounded-3xl
 border
@@ -80,7 +99,9 @@ backdrop-blur-xl
 p-8
 text-white
 "
+
 >
+
 
 
 <p className="text-slate-400">
@@ -88,6 +109,8 @@ text-white
 {card.title}
 
 </p>
+
+
 
 
 <h2 className="
@@ -101,13 +124,18 @@ font-bold
 </h2>
 
 
+
+
 </div>
+
 
 
 ))}
 
 
+
 </div>
+
 
 )
 

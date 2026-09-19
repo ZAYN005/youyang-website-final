@@ -88,82 +88,242 @@ export default function Technology() {
 
 
 
-      {/* Capability Cards */}
+     {/* Capability Cards */}
 
 
-      <section className="py-20">
+<section className="py-24">
 
 
-        <Container>
+<Container>
 
 
-          <h2 className="text-3xl font-bold text-navy">
+<div className="
+flex
+items-end
+justify-between
+">
 
-            {t("capabilities")}
+<div>
 
-          </h2>
+<p className="
+text-sm
+uppercase
+tracking-[0.3em]
+text-brand-blue
+">
 
+INTELLIGENT PLATFORM
 
-
-
-          <div className="mt-12 grid gap-8 md:grid-cols-2">
-
-
-
-            {technologies.map((item)=>(
-
-
-              <div
-                key={item.number}
-                className="
-                rounded-3xl
-                border
-                bg-white
-                p-8
-                shadow-sm
-                "
-              >
+</p>
 
 
-                <p className="text-sm font-bold text-brand-blue">
+<h2 className="
+mt-4
+text-4xl
+font-bold
+text-navy
+">
 
-                  {item.number}
+{t("capabilities")}
 
-                </p>
-
-
-
-                <h3 className="mt-4 text-2xl font-bold text-navy">
-
-                  {item.title}
-
-                </h3>
+</h2>
 
 
-
-                <p className="mt-4 leading-relaxed text-text-muted">
-
-                  {item.description}
-
-                </p>
+</div>
 
 
+<p className="
+hidden
+max-w-md
+text-right
+text-text-muted
+md:block
+">
 
-              </div>
+Advanced sensing technologies combining
+optics, AI computing, and intelligent perception.
+
+</p>
 
 
-            ))}
+</div>
 
 
 
-          </div>
 
 
-        </Container>
+<div className="
+mt-14
+grid
+gap-8
+md:grid-cols-2
+">
 
 
-      </section>
 
+{technologies.map((item)=>(
+
+
+<div
+
+key={item.number}
+
+className="
+group
+relative
+overflow-hidden
+rounded-[32px]
+border
+border-slate-200
+bg-white
+p-10
+transition-all
+duration-500
+hover:-translate-y-3
+hover:shadow-2xl
+"
+
+>
+
+
+{/* Number + line */}
+
+<div className="
+flex
+items-center
+gap-5
+">
+
+
+<span className="
+text-6xl
+font-black
+text-slate-100
+transition
+duration-500
+group-hover:text-brand-blue/20
+">
+
+{item.number}
+
+</span>
+
+
+<div className="
+h-px
+flex-1
+bg-slate-200
+group-hover:bg-brand-blue
+transition
+">
+
+</div>
+
+
+</div>
+
+
+
+
+
+<h3 className="
+mt-8
+text-3xl
+font-bold
+text-navy
+">
+
+{item.title}
+
+</h3>
+
+
+
+
+
+<p className="
+mt-5
+text-lg
+leading-relaxed
+text-text-muted
+">
+
+{item.description}
+
+</p>
+
+
+
+
+
+<div className="
+mt-10
+flex
+items-center
+gap-3
+">
+
+
+<span className="
+h-2
+w-2
+rounded-full
+bg-tech-cyan
+">
+
+</span>
+
+
+<span className="
+text-xs
+uppercase
+tracking-[0.25em]
+text-slate-400
+">
+
+AI PERCEPTION MODULE
+
+</span>
+
+
+</div>
+
+
+
+
+
+{/* bottom light effect */}
+
+<div className="
+absolute
+bottom-0
+left-0
+h-1
+w-0
+bg-tech-cyan
+transition-all
+duration-700
+group-hover:w-full
+">
+
+</div>
+
+
+
+</div>
+
+
+))}
+
+
+</div>
+
+
+
+</Container>
+
+
+</section>
 
 
 

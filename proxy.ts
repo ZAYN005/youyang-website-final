@@ -63,11 +63,7 @@ export async function proxy(req:any){
 
 
 export const config = {
-
-  matcher:[
-    "/",
-    "/(en|zh)/:path*",
-    "/admin/:path*"
+  matcher: [
+    "/((?!api|_next|.*\\..*).*)"
   ]
-
 };
