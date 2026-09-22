@@ -45,53 +45,12 @@ export default function Technology() {
 
 
 
-      {/* Core Technology */}
-
-
-      <section className="bg-space-navy py-24 text-white">
-
-
-        <Container>
-
-
-          <p className="text-sm uppercase tracking-[0.3em] text-tech-cyan">
-
-            {t("label")}
-
-          </p>
-
-
-
-          <h1 className="mt-5 max-w-4xl text-4xl font-bold lg:text-5xl">
-
-            {t("title")}
-
-          </h1>
-
-
-
-          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-300">
-
-            {t("description")}
-
-          </p>
-
-
-        </Container>
-
-
-      </section>
-
-
-
-
-
 
 
      {/* Capability Cards */}
 
 
-<section className="py-24">
+<section className="pt-21 pb-24">
 
 
 <Container>
@@ -132,18 +91,7 @@ text-navy
 </div>
 
 
-<p className="
-hidden
-max-w-md
-text-right
-text-text-muted
-md:block
-">
 
-Advanced sensing technologies combining
-optics, AI computing, and intelligent perception.
-
-</p>
 
 
 </div>

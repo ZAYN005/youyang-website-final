@@ -1,5 +1,7 @@
 import Hero from "@/components/sections/Hero";
-import Technology from "@/components/sections/Technology";
+import CompanyOverview from "@/components/sections/CompanyOverview";
+import MissionVision from "@/components/sections/MissionVision";
+import CoreTechnology from "@/components/sections/CoreTechnology";
 
 
 export default function Home() {
@@ -10,7 +12,11 @@ export default function Home() {
 
       <Hero />
 
-      <Technology />
+      <CompanyOverview />
+
+      <MissionVision />
+
+      <CoreTechnology />
 
     </main>
 

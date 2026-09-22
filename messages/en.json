@@ -22,99 +22,125 @@
   },
 
   "technology": {
-    "label": "Core Technology",
-    "title": "Engineering Intelligent Perception Systems",
-    "description": "Youyang combines optical innovation, AI computing, and intelligent sensing technologies to create next-generation wide-area perception solutions.",
-    "capabilities": "Core Technology Capabilities",
 
-    "items": {
-      "one": {
-        "title": "Compound-Eye Imaging",
-        "description": "Multi-camera optical architecture inspired by compound-eye vision enables wide-area panoramic perception with reduced blind spots and improved environmental awareness."
-      },
+  "label": "Core Technology Capabilities",
 
-      "two": {
-        "title": "AI Recognition Algorithms",
-        "description": "Advanced AI algorithms analyze visual information in real time, supporting intelligent detection, classification, recognition, and situation awareness."
-      },
+  "capabilityTitle": "Core Technology Capabilities",
 
-      "three": {
-        "title": "3D Image Stitching",
-        "description": "High-precision image fusion technology combines multiple camera views into seamless panoramic visual information for large-scale monitoring."
-      },
+  "description": "Youyang integrates optical innovation, AI computing, and intelligent sensing technologies to develop advanced perception systems for complex environments.",
 
-      "four": {
-        "title": "Digital Twin Modeling",
-        "description": "Digital representation technologies support intelligent monitoring, environment analysis, and data-driven decision making."
-      }
+
+  "capabilities": {
+
+    "one": {
+      "title": "Compound-Eye Imaging Technology",
+      "description": "Using multi-camera optical architecture inspired by compound-eye vision, the system enables panoramic perception, wide-area visual coverage, and reduced blind spots."
     },
 
-    "architecture": {
-      "label": "Intelligent Architecture",
-      "title": "From Perception To Intelligence",
-      "description": "Integrating advanced sensing hardware, edge AI computing, and intelligent analysis platforms to support complex application scenarios."
+
+    "two": {
+      "title": "AI Recognition Algorithms",
+      "description": "Advanced AI algorithms support intelligent detection, target recognition, classification, tracking, and situation awareness."
+    },
+
+
+    "three": {
+      "title": "Precision Structure Design",
+      "description": "Combining optical design and precision engineering to develop reliable intelligent perception equipment."
+    },
+
+
+    "four": {
+      "title": "Panoramic Perception Technology",
+      "description": "Multi-view image acquisition and fusion technologies create comprehensive visual information for large-scale perception applications."
+    },
+
+
+    "five": {
+      "title": "Digital Twin & Intelligent Platform",
+      "description": "Integrating sensing hardware, AI computing, data processing, and intelligent analysis to support perception, decision-making, and management."
     }
+
+  }
+
+},
+
+"company": {
+
+  "hero": {
+    "label": "About Youyang",
+    "title": "Intelligent Vision Systems For Wide-Area Intelligence",
+    "description": "Youyang Intelligent Control focuses on optical intelligent perception technology, integrating panoramic imaging, AI recognition, and intelligent sensing systems to provide solutions for complex application environments."
   },
 
 
-  "company": {
+  "overview": {
+    "title": "Company Overview",
+    "heading": "Building Intelligent Perception Systems Through Advanced Vision Technology",
+    "description": "Established in 2018, Jiangsu Youyang Intelligent Control Technology Co., Ltd. focuses on intelligent visual perception technology. The company integrates compound-eye imaging, precision structure design, AI recognition algorithms, and intelligent sensing technologies to develop advanced perception equipment and solutions."
+  },
 
-    "hero": {
-      "label": "About Youyang",
-      "title": "Intelligent Vision Systems For Wide-Area Intelligence",
-      "description": "Youyang Intelligent Control develops advanced panoramic sensing and intelligent surveillance solutions powered by optical innovation, AI computing, and intelligent perception technologies."
+
+  "established": "Established",
+  "year": "2018",
+  "establishedDescription": "Focused on the research and development of intelligent perception equipment and visual sensing solutions for complex environments.",
+
+
+  "cultureLabel": "Company Culture",
+
+  "cultureTitle": "Mission, Vision & Values",
+
+
+  "mission": {
+    "title": "Mission",
+    "description": "Driven by technological innovation, we continuously explore intelligent perception technologies and develop solutions that support intelligent applications in different environments."
+  },
+
+
+  "vision": {
+    "title": "Vision",
+    "description": "Through continuous development and technological exploration, we aim to build advanced intelligent perception capabilities and contribute to future intelligent systems."
+  },
+
+
+  "values": {
+    "title": "Values",
+    "description": "Global Perspective. We embrace technological development, collaborative cooperation, and quality-focused engineering to create reliable intelligent perception solutions."
+  },
+
+
+  "capabilityTitle": "Core Technology Capabilities",
+
+
+  "capabilities": {
+
+    "one": {
+      "title": "Compound-Eye Imaging",
+      "description": "Using multi-camera optical architecture to achieve panoramic perception, wide-area visual coverage, and reduced blind spots."
     },
 
-    "overview": {
-      "title": "Company Overview",
-      "description": "Established in 2018, Youyang Intelligent Control focuses on developing intelligent visual sensing systems for complex monitoring environments. Through the integration of panoramic imaging, AI recognition, and intelligent sensing technologies, the company provides advanced solutions for wide-area perception applications."
+
+    "two": {
+      "title": "AI Recognition Technology",
+      "description": "Applying AI algorithms for intelligent detection, recognition, analysis, and situation awareness."
     },
 
-    "established": "Established",
-    "year": "2018",
-    "establishedDescription": "Building intelligent perception systems for next-generation visual applications.",
 
-    "mission": {
-      "title": "Mission",
-      "description": "Technology leads development, and innovation creates excellence. We leverage advanced technologies and continuous innovation to develop intelligent sensing solutions that create value for industries and society."
-    },
-
-    "vision": {
-      "title": "Vision",
-      "description": "Become a high-quality high-tech brand enterprise. We aim to build a trusted technology brand through advanced innovation, reliable products, and commitment to quality."
-    },
-
-    "values": {
-      "title": "Values",
-      "description": "Global Perspective. We embrace a worldwide vision, continuously exploring technological progress and creating intelligent solutions for global applications."
-    },
-
-    "capabilityTitle": "Core Technology Capability",
-
-    "capabilities": {
-      "one": {
-        "title": "Compound-Eye Imaging",
-        "description": "Advanced optical architecture enabling panoramic visual perception and wide-area monitoring."
-      },
-
-      "two": {
-        "title": "AI Recognition Technology",
-        "description": "Intelligent algorithms provide real-time recognition and situation awareness capabilities."
-      },
-
-      "three": {
-        "title": "Intelligent Sensing Systems",
-        "description": "Integrated sensing solutions combining imaging, AI computing, and intelligent perception."
-      }
-    },
-
-    "cta": {
-      "title": "Partner With Youyang Intelligent Control",
-      "description": "Explore intelligent sensing solutions designed for future applications.",
-      "button": "Contact Us →"
+    "three": {
+      "title": "Intelligent Sensing Systems",
+      "description": "Integrating imaging technology, AI computing, and intelligent analysis to create advanced perception systems."
     }
 
   },
+
+
+  "cta": {
+    "title": "Partner With Youyang Intelligent Control",
+    "description": "Explore intelligent perception technologies designed for complex application environments.",
+    "button": "Contact Us →"
+  }
+
+},
 
 
   "products": {
