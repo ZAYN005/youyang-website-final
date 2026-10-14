@@ -1,29 +1,61 @@
 #!/bin/bash
-# Youyang website - daily database backup (run once as ROOT)
+# Youyang website - daily backup of the database and uploaded images.
+# Run once with:  sudo bash setup-backup.sh
 # Only READS the database (pg_dump). Does not change the website, the code or the data.
 set -e
-if [ "$(id -u)" != "0" ]; then echo "Please run as root:  su -   then   bash /home/admin/setup-backup.sh"; exit 1; fi
+if [ "$(id -u)" != "0" ]; then echo "Please run with sudo:  sudo bash setup-backup.sh"; exit 1; fi
 
 BACKUP_DIR=/home/admin/backups
 
 echo ""
-echo "===== 1/4  Creating backup folder $BACKUP_DIR ====="
+echo "===== 1/4  Backup folder $BACKUP_DIR ====="
 mkdir -p "$BACKUP_DIR"
-chown postgres:admin "$BACKUP_DIR"
-chmod 770 "$BACKUP_DIR"
+chown admin:admin "$BACKUP_DIR"
+chmod 750 "$BACKUP_DIR"
+# remove the wrong log line / empty files from the first attempt
+rm -f "$BACKUP_DIR"/backup.log
+find "$BACKUP_DIR" -name 'youyang-*.dump' -size 0 -delete
 
 echo ""
 echo "===== 2/4  Writing the backup command /usr/local/bin/youyang-backup ====="
-cat > /usr/local/bin/youyang-backup <<'EOF'
+cat > /usr/local/bin/youyang-backup <<'SCRIPT'
 #!/bin/bash
-# Exports the youyang database to a compressed file and keeps the last 14 days.
+# Saves the youyang database + uploaded images, keeps the last 14 days.
+set -o pipefail
 BACKUP_DIR=/home/admin/backups
-FILE="$BACKUP_DIR/youyang-$(date +%F_%H%M).dump"
+STAMP=$(date +%F_%H%M)
+DB_FILE="$BACKUP_DIR/youyang-$STAMP.dump"
+IMG_FILE="$BACKUP_DIR/uploads-$STAMP.tar.gz"
+LOG="$BACKUP_DIR/backup.log"
 cd /tmp
-sudo -u postgres pg_dump -Fc youyang -f "$FILE" && chmod 640 "$FILE" && chgrp admin "$FILE"
+
+# postgres only READS the database and writes to stdout; root writes the file
+if runuser -u postgres -- pg_dump -Fc youyang > "$DB_FILE" && [ -s "$DB_FILE" ]; then
+  chown admin:admin "$DB_FILE"; chmod 640 "$DB_FILE"
+  echo "$(date '+%F %T') OK   database -> $DB_FILE ($(du -h "$DB_FILE" | cut -f1))" >> "$LOG"
+else
+  rm -f "$DB_FILE"
+  echo "$(date '+%F %T') FAIL database backup" >> "$LOG"
+  STATUS=1
+fi
+
+# images uploaded in 内容管理
+if [ -d /home/admin/uploads ]; then
+  if tar -czf "$IMG_FILE" -C /home/admin uploads; then
+    chown admin:admin "$IMG_FILE"; chmod 640 "$IMG_FILE"
+    echo "$(date '+%F %T') OK   images   -> $IMG_FILE ($(du -h "$IMG_FILE" | cut -f1))" >> "$LOG"
+  else
+    rm -f "$IMG_FILE"
+    echo "$(date '+%F %T') FAIL images backup" >> "$LOG"
+    STATUS=1
+  fi
+fi
+
 find "$BACKUP_DIR" -name 'youyang-*.dump' -mtime +14 -delete
-echo "$(date '+%F %T') backup saved: $FILE ($(du -h "$FILE" | cut -f1))" >> "$BACKUP_DIR/backup.log"
-EOF
+find "$BACKUP_DIR" -name 'uploads-*.tar.gz' -mtime +14 -delete
+chown admin:admin "$LOG"
+exit ${STATUS:-0}
+SCRIPT
 chmod 755 /usr/local/bin/youyang-backup
 
 echo ""
@@ -35,13 +67,18 @@ chmod 644 /etc/cron.d/youyang-backup
 
 echo ""
 echo "===== 4/4  Running one backup now to test ====="
-/usr/local/bin/youyang-backup
-ls -lh "$BACKUP_DIR"
-cat "$BACKUP_DIR/backup.log"
-
-echo ""
-echo "=================================================="
-echo " BACKUPS ARE ON"
-echo " Every night at 03:00, kept for 14 days, in $BACKUP_DIR"
-echo " Run a backup any time:   sudo youyang-backup"
-echo "=================================================="
+if /usr/local/bin/youyang-backup; then
+  ls -lh "$BACKUP_DIR"
+  cat "$BACKUP_DIR/backup.log"
+  echo ""
+  echo "=================================================="
+  echo " BACKUPS ARE ON"
+  echo " Every night at 03:00, kept for 14 days, in $BACKUP_DIR"
+  echo " Run a backup any time:   sudo youyang-backup"
+  echo "=================================================="
+else
+  ls -lh "$BACKUP_DIR"
+  cat "$BACKUP_DIR/backup.log"
+  echo ""
+  echo "===== TEST BACKUP FAILED - copy everything above and send it to Claude ====="
+fi
