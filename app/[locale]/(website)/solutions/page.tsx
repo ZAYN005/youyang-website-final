@@ -4,10 +4,13 @@ import Link from "next/link";
 
 import Container from "@/components/ui/Container";
 
-import Button from "@/components/ui/Button";
+import { getTranslations, getLocale } from "next-intl/server";
 
-import { useTranslations, useLocale } from "next-intl";
+import { singleImage } from "@/lib/cms/images";
 
+import { getVisibleCatalog } from "@/lib/catalog/server";
+import { pathFor } from "@/lib/catalog/builtins";
+import { images, pick } from "@/lib/catalog/schema";
 
 
 export const metadata: Metadata = {
@@ -23,127 +26,55 @@ export const metadata: Metadata = {
 
 
 
-const solutions = [
-
-  {
-    key: "urban",
-    image: "/solutions/plaza.png",
-    link: "/solutions/urban-public-spaces",
-    features: [
-      "crowd",
-      "behavior",
-      "awareness",
-    ],
-  },
-
-
-  {
-    key: "transportation",
-    image: "/solutions/airport.png",
-    link: "/solutions/transportation-hubs-critical-sites",
-    features: [
-      "intrusion",
-      "trajectory",
-      "monitoring",
-    ],
-  },
-
-
-  {
-    key: "campus",
-    image: "/solutions/campus.jpg",
-    link: "/solutions/campuses-educational-institutions",
-    features: [
-      "perimeter",
-      "safety",
-      "intelligent",
-    ],
-  },
-
-
-  {
-    key: "healthcare",
-    image: "/solutions/healthcare.jpg",
-    link: "/solutions/healthcare-senior-care",
-    features: [
-      "critical",
-      "risk",
-      "patient",
-    ],
-  },
-
-
-  {
-    key: "security",
-    image: "/solutions/high-security.jpg",
-    link: "/solutions/high-security-facilities",
-    features: [
-      "intrusion",
-      "behavior",
-      "asset",
-    ],
-  },
-
-
-  {
-    key: "industrial",
-    image: "/solutions/industrial-worksite.jpg",
-    link: "/solutions/commercial-industrial-worksites",
-    features: [
-      "safety",
-      "hazard",
-      "security",
-    ],
-  },
-
-];
 
 
 
 
-const products = [
-
-  {
-    key: "sentinel",
-    image: "/products/360-sentinel.png",
-    link: "/products/360-sentinel",
-  },
+export const dynamic = "force-dynamic";
 
 
-  {
-    key: "dome",
-    image: "/products/dome-watch.png",
-    link: "/products/dome-watch",
-  },
+export default async function SolutionsPage() {
 
 
-  {
-    key: "guardian",
-    image: "/products/wide-area-guardian.jpg",
-    link: "/products/wide-area-guardian",
-  },
+  const t = await getTranslations("solutions");
 
-];
+  const locale = await getLocale();
+
+  const lang = locale === "zh" ? "zh" : "en";
 
 
-
-
-export default function SolutionsPage() {
-
-
-  const t = useTranslations("solutions");
-
-  const locale = useLocale();
+  // built-in solutions + solutions added in 内容管理, in the chosen order
+  const solutions = (await getVisibleCatalog("solution")).map((entry) => {
+    if (entry.builtin) {
+      const key = entry.builtin.key;
+      return {
+        id: entry.slug,
+        href: pathFor("solution", entry.slug),
+        image: singleImage(t.raw(`items.${key}.image`), entry.builtin.image),
+        title: t(`items.${key}.title`),
+        description: t(`items.${key}.description`),
+      };
+    }
+    const data = entry.data ?? {};
+    return {
+      id: entry.slug,
+      href: pathFor("solution", entry.slug),
+      image: images(data.images)[0] ?? "",
+      title: pick(data.name, lang),
+      description: pick(data.summary, lang),
+    };
+  });
 
 
 
   return (
 
     <main>
-            {/* Hero */}
+
+
+      {/* Hero */}
 
       <section className="bg-space-navy py-24 text-white">
-
 
         <Container>
 
@@ -159,9 +90,7 @@ export default function SolutionsPage() {
 
           <h1 className="mt-5 max-w-4xl text-5xl font-bold leading-tight">
 
-
             {t("hero.title")}
-
 
           </h1>
 
@@ -170,9 +99,7 @@ export default function SolutionsPage() {
 
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-300">
 
-
             {t("hero.description")}
-
 
           </p>
 
@@ -187,8 +114,7 @@ export default function SolutionsPage() {
 
 
 
-
-      {/* Solutions */}
+      {/* Solution Cards */}
 
 
       <section className="py-20">
@@ -208,11 +134,21 @@ export default function SolutionsPage() {
 
               <Link
 
-                key={solution.key}
+                key={solution.id}
 
-                href={`/${locale}${solution.link}`}
+                href={`/${locale}${solution.href}`}
 
-                className="group overflow-hidden rounded-3xl bg-white shadow-sm transition hover:-translate-y-2 hover:shadow-xl"
+                className="
+                group
+                overflow-hidden
+                rounded-3xl
+                bg-white
+                shadow-sm
+                transition
+                hover:-translate-y-2
+                hover:shadow-xl
+                "
+
 
               >
 
@@ -221,15 +157,22 @@ export default function SolutionsPage() {
                 <div className="h-72 overflow-hidden">
 
 
-                  <img
+                  {solution.image && <img
 
                     src={solution.image}
 
-                    alt={t(`items.${solution.key}.title`)}
+                    alt={solution.title}
 
-                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                    className="
+                    h-full
+                    w-full
+                    object-cover
+                    transition
+                    duration-500
+                    group-hover:scale-105
+                    "
 
-                  />
+                  />}
 
 
                 </div>
@@ -242,19 +185,31 @@ export default function SolutionsPage() {
 
 
 
-                  <p className="text-sm font-bold uppercase tracking-wider text-brand-blue">
+                  <p className="
+                  text-sm
+                  font-bold
+                  uppercase
+                  tracking-wider
+                  text-brand-blue
+                  ">
 
-                    0{index+1} / {t("solutionLabel")}
+                    {String(index + 1).padStart(2, "0")} / {t("solutionLabel")}
 
                   </p>
 
 
 
 
-                  <h2 className="mt-4 text-3xl font-bold text-navy">
+
+                  <h2 className="
+                  mt-4
+                  text-3xl
+                  font-bold
+                  text-navy
+                  ">
 
 
-                    {t(`items.${solution.key}.title`)}
+                    {solution.title}
 
 
                   </h2>
@@ -262,10 +217,16 @@ export default function SolutionsPage() {
 
 
 
-                  <p className="mt-4 text-text-muted">
+
+                  <p className="
+                  mt-4
+                  whitespace-pre-line
+                  leading-relaxed
+                  text-text-muted
+                  ">
 
 
-                    {t(`items.${solution.key}.description`)}
+                    {solution.description}
 
 
                   </p>
@@ -274,94 +235,11 @@ export default function SolutionsPage() {
 
 
 
-                  <div className="mt-6 border-t pt-5">
-
-
-                    <h3 className="font-bold text-navy">
-
-                      {t("coverage")}
-
-                    </h3>
-
-
-
-                    <p className="mt-2 text-sm text-text-muted">
-
-
-                      {t(`items.${solution.key}.coverage`)}
-
-
-                    </p>
-
-
-
-                  </div>
-
-
-
-
-
-
-                  <div className="mt-5">
-
-
-                    <h3 className="font-bold text-navy">
-
-
-                      {t("coreValue")}
-
-
-                    </h3>
-
-
-
-
-                    <p className="mt-2 text-sm text-text-muted">
-
-
-                      {t(`items.${solution.key}.value`)}
-
-
-                    </p>
-
-
-
-                  </div>
-
-
-
-
-
-
-                  <ul className="mt-6 space-y-2 text-sm text-text-muted">
-
-
-
-                    {solution.features.map(feature => (
-
-
-
-                      <li key={feature}>
-
-
-                        ✓ {t(`features.${feature}`)}
-
-
-                      </li>
-
-
-
-                    ))}
-
-
-
-                  </ul>
-
-
-
-
-
-                  <p className="mt-7 font-semibold text-brand-blue">
+                  <p className="
+                  mt-7
+                  font-semibold
+                  text-brand-blue
+                  ">
 
 
                     {t("explore")} →
@@ -393,7 +271,11 @@ export default function SolutionsPage() {
 
 
       </section>
-            {/* Architecture */}
+
+
+
+
+      {/* Architecture */}
 
       <section className="bg-gray-bg py-20">
 
@@ -404,8 +286,12 @@ export default function SolutionsPage() {
           <div className="text-center">
 
 
-
-            <p className="text-sm uppercase tracking-[0.3em] text-brand-blue">
+            <p className="
+            text-sm
+            uppercase
+            tracking-[0.3em]
+            text-brand-blue
+            ">
 
               {t("architecture.label")}
 
@@ -414,7 +300,13 @@ export default function SolutionsPage() {
 
 
 
-            <h2 className="mt-4 text-4xl font-bold text-navy">
+
+            <h2 className="
+            mt-4
+            text-4xl
+            font-bold
+            text-navy
+            ">
 
 
               {t("architecture.title")}
@@ -430,12 +322,18 @@ export default function SolutionsPage() {
 
 
 
-          <div className="mt-12 rounded-3xl bg-white p-6 shadow-sm">
+          <div className="
+          mt-12
+          rounded-3xl
+          bg-white
+          p-6
+          shadow-sm
+          ">
 
 
             <img
 
-              src="/solutions/architecture.png"
+              src={singleImage(t.raw("architecture.image"), "/solutions/architecture.png")}
 
               alt={t("architecture.title")}
 
@@ -458,120 +356,8 @@ export default function SolutionsPage() {
 
 
 
-
-
-
-      {/* Products */}
-
-
-      <section className="py-20">
-
-
-        <Container>
-
-
-
-
-          <h2 className="text-center text-4xl font-bold text-navy">
-
-
-            {t("productsTitle")}
-
-
-          </h2>
-
-
-
-
-
-
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
-
-
-
-            {products.map(product => (
-
-
-
-              <Link
-
-                key={product.key}
-
-                href={`/${locale}${product.link}`}
-
-                className="rounded-3xl bg-white p-8 shadow-sm hover:shadow-xl"
-
-              >
-
-
-
-
-                <img
-
-                  src={product.image}
-
-                  alt={t(`products.${product.key}.name`)}
-
-                  className="h-52 w-full object-contain"
-
-                />
-
-
-
-
-
-                <h3 className="mt-6 text-2xl font-bold text-navy">
-
-
-                  {t(`products.${product.key}.name`)}
-
-
-                </h3>
-
-
-
-
-
-                <p className="mt-3 text-text-muted">
-
-
-                  {t(`products.${product.key}.description`)}
-
-
-                </p>
-
-
-
-
-
-              </Link>
-
-
-
-            ))}
-
-
-
-
-          </div>
-
-
-
-
-
-        </Container>
-
-
-
-      </section>
-
-
-
-
-
     </main>
 
   );
-
 
 }

@@ -6,15 +6,19 @@ import Button from "@/components/ui/Button";
 
 import { useTranslations, useLocale } from "next-intl";
 
+import ImageCarousel from "@/components/ui/ImageCarousel";
+import { imageList } from "@/lib/cms/images";
+
+
 
 
 export const metadata: Metadata = {
 
   title:
-    "Campuses & Educational Institutions | AI Safety Solutions | Youyang Intelligent Control",
+    "Campuses & Educational Institutions Intelligent Sensing Solution | Youyang Intelligent Control",
 
   description:
-    "Youyang Intelligent Control provides AI-powered intelligent sensing solutions for campuses and educational institutions, supporting safety monitoring, abnormal event detection, and intelligent facility protection.",
+    "AI-powered intelligent sensing solutions for campuses and educational institutions, supporting safety awareness, intelligent monitoring, abnormal event detection, and facility protection.",
 
 };
 
@@ -22,15 +26,16 @@ export const metadata: Metadata = {
 
 
 
-const challenges = [
 
-  "safety",
+const coverage = [
 
-  "monitoring",
+  "universities",
 
-  "response",
+  "schools",
 
-  "protection",
+  "trainingInstitutions",
+
+  "campusAreas",
 
 ];
 
@@ -42,13 +47,9 @@ const capabilities = [
 
   "campusMonitoring",
 
-  "perimeter",
+  "perimeterProtection",
 
-  "behavior",
-
-  "awareness",
-
-  "security",
+  "behaviorAnalysis",
 
 ];
 
@@ -56,17 +57,18 @@ const capabilities = [
 
 
 
-const applications = [
+const values = [
 
-  "universities",
+  "campusSafety",
 
-  "schools",
+  "efficientManagement",
 
-  "training",
+  "rapidResponse",
 
-  "campuses",
+  "intelligentDecision",
 
 ];
+
 
 
 
@@ -78,30 +80,46 @@ export default function CampusesPage() {
 
   const t = useTranslations("campuses");
 
-    const locale = useLocale();
+  const locale = useLocale();
+
+  const heroImages = imageList(t.raw("hero.images"), ["/solutions/campus.jpg"]);
+
 
 
 
   return (
 
-
     <main>
 
 
 
-      {/* Hero */}
 
 
-      <section className="bg-space-navy py-24 text-white">
+      {/* HERO */}
+
+
+
+      <section className="
+        relative
+        overflow-hidden
+        bg-space-navy
+        py-24
+        text-white
+      ">
+
 
 
         <Container>
 
 
 
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
 
-
+          <div className="
+            grid
+            items-center
+            gap-12
+            lg:grid-cols-2
+          ">
 
 
 
@@ -109,12 +127,14 @@ export default function CampusesPage() {
 
 
 
-
-              <p className="text-sm uppercase tracking-[0.3em] text-tech-cyan">
-
+              <p className="
+                text-sm
+                uppercase
+                tracking-[0.3em]
+                text-tech-cyan
+              ">
 
                 {t("hero.label")}
-
 
               </p>
 
@@ -122,11 +142,15 @@ export default function CampusesPage() {
 
 
 
-              <h1 className="mt-5 text-5xl font-bold">
-
+              <h1 className="
+                mt-5
+                text-4xl
+                font-bold
+                leading-tight
+                lg:text-5xl
+              ">
 
                 {t("hero.title")}
-
 
               </h1>
 
@@ -134,11 +158,15 @@ export default function CampusesPage() {
 
 
 
-              <p className="mt-6 text-lg leading-relaxed text-slate-300">
-
+              <p className="
+                mt-6
+                max-w-xl
+                text-lg
+                leading-relaxed
+                text-slate-300
+              ">
 
                 {t("hero.description")}
-
 
               </p>
 
@@ -149,13 +177,14 @@ export default function CampusesPage() {
               <div className="mt-8">
 
 
-               <Button href={`/${locale}/contact`}>
-  {t("hero.button")} →
-</Button>
+                <Button href={`/${locale}/contact`}>
+
+                  {t("hero.button")}
+
+                </Button>
 
 
               </div>
-
 
 
 
@@ -168,17 +197,29 @@ export default function CampusesPage() {
 
 
 
-            <div className="overflow-hidden rounded-3xl">
+            <div className="
+              overflow-hidden
+              rounded-[32px]
+              border
+              border-white/10
+              bg-white/5
+              p-3
+            ">
 
 
 
-              <img
+              <ImageCarousel
 
-                src="/solutions/campus.jpg"
+                images={heroImages}
 
                 alt={t("hero.title")}
 
-                className="h-[420px] w-full object-cover"
+                className="
+                  h-[420px]
+                  w-full
+                  rounded-[24px]
+                  object-cover
+                "
 
               />
 
@@ -189,13 +230,14 @@ export default function CampusesPage() {
 
 
 
-
           </div>
 
 
 
 
         </Container>
+
+
 
 
       </section>
@@ -206,11 +248,14 @@ export default function CampusesPage() {
 
 
 
-      {/* Overview */}
+
+
+      {/* OVERVIEW */}
 
 
 
-      <section className="py-20">
+      <section className="py-24">
+
 
 
         <Container>
@@ -218,31 +263,404 @@ export default function CampusesPage() {
 
 
 
-          <h2 className="text-3xl font-bold text-navy">
-
-
-            {t("overview.title")}
-
-
-          </h2>
-
+          <div className="
+            grid
+            gap-12
+            lg:grid-cols-3
+          ">
 
 
 
 
+            <div className="lg:col-span-2">
 
-          <p className="mt-6 max-w-4xl text-lg text-text-muted">
+
+              <p className="
+                text-sm
+                uppercase
+                tracking-[0.3em]
+                text-brand-blue
+              ">
+
+                {t("overview.label")}
+
+              </p>
 
 
-            {t("overview.description")}
 
+
+
+              <h2 className="
+                mt-4
+                text-4xl
+                font-bold
+                text-navy
+              ">
+
+                {t("overview.title")}
+
+              </h2>
+
+
+
+
+
+              <p className="
+                mt-6
+                text-lg
+                leading-relaxed
+                text-text-muted
+              ">
+
+                {t("overview.description")}
+
+              </p>
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <div className="
+              rounded-[32px]
+              bg-[#f4f8ff]
+              p-8
+            ">
+
+
+
+              <h3 className="
+                text-xl
+                font-bold
+                text-navy
+              ">
+
+                {t("overview.highlightTitle")}
+
+              </h3>
+
+
+
+
+
+              <p className="
+                mt-4
+                leading-relaxed
+                text-text-muted
+              ">
+
+                {t("overview.highlight")}
+
+              </p>
+
+
+
+            </div>
+
+
+
+          </div>
+
+
+
+
+        </Container>
+
+
+
+      </section>
+
+
+
+
+
+
+
+
+
+      {/* COVERAGE */}
+
+
+
+      <section className="
+        bg-gray-bg
+        py-24
+      ">
+
+
+
+        <Container>
+
+
+
+
+          <p className="
+            text-sm
+            uppercase
+            tracking-[0.3em]
+            text-brand-blue
+          ">
+
+            {t("coverage.label")}
 
           </p>
 
 
 
 
+
+          <h2 className="
+            mt-4
+            text-4xl
+            font-bold
+            text-navy
+          ">
+
+            {t("coverage.title")}
+
+          </h2>
+
+
+
+
+
+
+          <div className="
+            mt-12
+            grid
+            gap-6
+            md:grid-cols-2
+            lg:grid-cols-4
+          ">
+
+
+
+
+            {coverage.map((item,index)=>(
+
+
+
+              <div
+
+                key={item}
+
+                className="
+                  rounded-[28px]
+                  bg-white
+                  p-8
+                  shadow-sm
+                  transition
+                  hover:-translate-y-2
+                  hover:shadow-xl
+                "
+
+              >
+
+
+
+                <span className="
+                  text-4xl
+                  font-black
+                  text-brand-blue/20
+                ">
+
+                  0{index + 1}
+
+                </span>
+
+
+
+
+
+                <h3 className="
+                  mt-5
+                  text-xl
+                  font-bold
+                  text-navy
+                ">
+
+                  {t(`coverage.items.${item}`)}
+
+                </h3>
+
+
+
+
+              </div>
+
+
+
+            ))}
+
+
+
+          </div>
+
+
+
+
+
         </Container>
+
+
+
+      </section>
+      
+      {/* CORE CAPABILITIES */}
+
+
+      <section className="py-24">
+
+
+        <Container>
+
+
+
+
+          <div>
+
+
+            <p className="
+              text-sm
+              uppercase
+              tracking-[0.3em]
+              text-brand-blue
+            ">
+
+              {t("capabilities.label")}
+
+            </p>
+
+
+
+
+
+            <h2 className="
+              mt-4
+              text-4xl
+              font-bold
+              text-navy
+            ">
+
+              {t("capabilities.title")}
+
+            </h2>
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+          <div className="
+            mt-12
+            grid
+            gap-8
+            lg:grid-cols-3
+          ">
+
+
+
+            {capabilities.map((item,index)=>(
+
+
+
+              <div
+
+                key={item}
+
+                className="
+                  group
+                  rounded-[32px]
+                  border
+                  border-slate-200
+                  bg-white
+                  p-8
+                  transition
+                  duration-300
+                  hover:-translate-y-2
+                  hover:shadow-xl
+                "
+
+              >
+
+
+
+
+
+                <span className="
+                  text-5xl
+                  font-black
+                  text-slate-100
+                  transition
+                  group-hover:text-brand-blue/20
+                ">
+
+                  0{index + 1}
+
+                </span>
+
+
+
+
+
+
+                <h3 className="
+                  mt-6
+                  text-2xl
+                  font-bold
+                  text-navy
+                ">
+
+                  {t(`capabilities.items.${item}.title`)}
+
+                </h3>
+
+
+
+
+
+
+                <p className="
+                  mt-5
+                  leading-relaxed
+                  text-text-muted
+                ">
+
+                  {t(`capabilities.items.${item}.description`)}
+
+                </p>
+
+
+
+
+
+              </div>
+
+
+
+            ))}
+
+
+
+          </div>
+
+
+
+
+
+        </Container>
+
 
 
       </section>
@@ -254,24 +672,59 @@ export default function CampusesPage() {
 
 
 
-      {/* Challenges */}
+
+      {/* CORE VALUE */}
 
 
 
-      <section className="bg-gray-bg py-20">
+      <section className="
+        bg-space-navy
+        py-24
+        text-white
+      ">
+
+
 
 
         <Container>
 
 
 
-          <h2 className="text-3xl font-bold text-navy">
 
 
-            {t("challenges.title")}
+          <div className="max-w-3xl">
 
 
-          </h2>
+            <p className="
+              text-sm
+              uppercase
+              tracking-[0.3em]
+              text-tech-cyan
+            ">
+
+              {t("values.label")}
+
+            </p>
+
+
+
+
+
+
+            <h2 className="
+              mt-4
+              text-4xl
+              font-bold
+            ">
+
+              {t("values.title")}
+
+            </h2>
+
+
+
+
+          </div>
 
 
 
@@ -279,13 +732,18 @@ export default function CampusesPage() {
 
 
 
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
+          <div className="
+            mt-12
+            grid
+            gap-6
+            md:grid-cols-2
+          ">
 
 
 
 
 
-            {challenges.map(item => (
+            {values.map((item,index)=>(
 
 
 
@@ -293,18 +751,68 @@ export default function CampusesPage() {
 
                 key={item}
 
-                className="rounded-2xl bg-white p-6"
+                className="
+                  rounded-[28px]
+                  border
+                  border-white/10
+                  bg-white/5
+                  p-8
+                  backdrop-blur
+                "
 
               >
 
 
 
-                ✓ {t(`challenges.items.${item}`)}
+
+
+                <span className="
+                  text-4xl
+                  font-black
+                  text-tech-cyan/60
+                ">
+
+                  0{index + 1}
+
+                </span>
+
+
+
+
+
+
+
+                <h3 className="
+                  mt-5
+                  text-xl
+                  font-bold
+                ">
+
+                  {t(`values.items.${item}.title`)}
+
+                </h3>
+
+
+
+
+
+
+
+                <p className="
+                  mt-4
+                  leading-relaxed
+                  text-slate-300
+                ">
+
+                  {t(`values.items.${item}.description`)}
+
+                </p>
+
+
 
 
 
               </div>
-
 
 
 
@@ -313,7 +821,9 @@ export default function CampusesPage() {
 
 
 
+
           </div>
+
 
 
 
@@ -322,71 +832,6 @@ export default function CampusesPage() {
         </Container>
 
 
-      </section>
-            {/* Capabilities */}
-
-
-      <section className="py-20">
-
-
-        <Container>
-
-
-
-          <h2 className="text-3xl font-bold text-navy">
-
-
-            {t("capabilities.title")}
-
-
-          </h2>
-
-
-
-
-
-
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-
-
-
-
-
-            {capabilities.map(item => (
-
-
-
-
-              <div
-
-                key={item}
-
-                className="rounded-2xl border p-6 font-semibold text-navy"
-
-              >
-
-
-                ✓ {t(`capabilities.items.${item}`)}
-
-
-
-              </div>
-
-
-
-
-
-            ))}
-
-
-
-
-          </div>
-
-
-
-
-        </Container>
 
 
       </section>
@@ -399,11 +844,12 @@ export default function CampusesPage() {
 
 
 
-      {/* Applications */}
+      {/* CTA */}
 
 
 
-      <section className="bg-gray-bg py-20">
+      <section className="py-24">
+
 
 
         <Container>
@@ -411,115 +857,63 @@ export default function CampusesPage() {
 
 
 
-          <h2 className="text-3xl font-bold text-navy">
+          <div className="
+            rounded-[40px]
+            bg-[#f4f8ff]
+            px-8
+            py-14
+            text-center
+            lg:px-20
+          ">
 
 
-            {t("applications.title")}
 
 
-          </h2>
 
+            <h2 className="
+              text-3xl
+              font-bold
+              text-navy
+              lg:text-4xl
+            ">
 
+              {t("cta.title")}
 
+            </h2>
 
 
 
-          <div className="mt-8 grid gap-5 md:grid-cols-2">
 
 
 
 
+            <p className="
+              mx-auto
+              mt-5
+              max-w-2xl
+              text-lg
+              leading-relaxed
+              text-text-muted
+            ">
 
-            {applications.map(item => (
+              {t("cta.description")}
 
+            </p>
 
 
 
-              <div
 
-                key={item}
 
-                className="rounded-xl bg-white p-6 font-semibold"
 
-              >
 
+            <div className="mt-8">
 
 
-                {t(`applications.items.${item}`)}
+              <Button href={`/${locale}/contact`}>
 
+                {t("cta.button")}
 
-
-              </div>
-
-
-
-
-
-            ))}
-
-
-
-
-          </div>
-
-
-
-
-
-        </Container>
-
-
-      </section>
-
-
-
-
-
-
-
-
-
-      {/* Products */}
-
-
-
-      <section className="py-20">
-
-
-        <Container>
-
-
-
-
-          <h2 className="text-3xl font-bold text-navy">
-
-
-            {t("products.title")}
-
-
-          </h2>
-
-
-
-
-
-
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-
-
-
-
-
-            <div className="rounded-2xl bg-gray-bg p-7">
-
-
-              <h3 className="text-xl font-bold text-navy">
-
-
-                {t("products.sentinel")}
-
-
-              </h3>
+              </Button>
 
 
             </div>
@@ -528,41 +922,6 @@ export default function CampusesPage() {
 
 
 
-            <div className="rounded-2xl bg-gray-bg p-7">
-
-
-              <h3 className="text-xl font-bold text-navy">
-
-
-                {t("products.dome")}
-
-
-              </h3>
-
-
-            </div>
-
-
-
-
-
-            <div className="rounded-2xl bg-gray-bg p-7">
-
-
-              <h3 className="text-xl font-bold text-navy">
-
-
-                {t("products.guardian")}
-
-
-              </h3>
-
-
-            </div>
-
-
-
-
 
           </div>
 
@@ -573,15 +932,14 @@ export default function CampusesPage() {
         </Container>
 
 
-      </section>
 
+      </section>
 
 
 
 
 
     </main>
-
 
   );
 

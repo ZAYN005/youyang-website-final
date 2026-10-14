@@ -1,10 +1,28 @@
 import type { MetadataRoute } from "next";
 
+import { getVisibleCatalog } from "@/lib/catalog/server";
+import { pathFor } from "@/lib/catalog/builtins";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+
+export const dynamic = "force-dynamic";
+
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
 
   const baseUrl = "https://yyteck.cn";
+
+
+  // products / solutions added in 内容管理
+  const added = (await Promise.all([getVisibleCatalog("product"), getVisibleCatalog("solution")]))
+    .flat()
+    .filter((entry) => !entry.builtin)
+    .map((entry) => ({
+      url: `${baseUrl}${pathFor(entry.kind, entry.slug)}`,
+      lastModified: entry.updatedAt ?? new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    }));
 
 
   return [
@@ -90,6 +108,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
 
+
+    ...added,
 
   ];
 

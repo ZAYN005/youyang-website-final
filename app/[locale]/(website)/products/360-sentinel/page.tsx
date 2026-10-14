@@ -7,6 +7,9 @@ import { getTranslations } from "next-intl/server";
 
 import { useTranslations, useLocale } from "next-intl";
 
+import ImageCarousel from "@/components/ui/ImageCarousel";
+import { imageList } from "@/lib/cms/images";
+
 
 
 export const metadata: Metadata = {
@@ -33,6 +36,12 @@ const advantages = [
   },
   {
     key: "four",
+  },
+  {
+    key: "five",
+  },
+  {
+    key: "six",
   },
 ];
 
@@ -67,6 +76,8 @@ export default function SentinelPage() {
 
   const locale = useLocale();
 
+  const images = imageList(t.raw("images"), ["/products/360-sentinel.png"]);
+
 
   return (
 
@@ -98,7 +109,7 @@ export default function SentinelPage() {
 
               <h1 className="mt-5 text-5xl font-bold">
 
-                360 Sentinel
+                {t("heroTitle")}
 
               </h1>
 
@@ -106,7 +117,7 @@ export default function SentinelPage() {
 
               <p className="mt-3 text-lg text-slate-300">
 
-                YYZK-Sentry-6L-V1.0
+                {t("model")}
 
               </p>
 
@@ -146,9 +157,9 @@ export default function SentinelPage() {
               <div className="flex h-[380px] w-[380px] items-center justify-center rounded-3xl bg-white/5 p-10 backdrop-blur">
 
 
-                <img
-                  src="/products/360-sentinel.png"
-                  alt="360 Sentinel"
+                <ImageCarousel
+                  images={images}
+                  alt={t("heroTitle")}
                   className="h-full w-full object-contain"
                 />
 
@@ -311,19 +322,43 @@ export default function SentinelPage() {
             {[
   {
     parameter: "model",
-    value: "YYZK-Sentry-6L-V1.0",
+    value: t("specifications.values.model"),
   },
   {
-    parameter: "imaging",
-    value: t("specifications.values.imaging"),
+    parameter: "vision",
+    value: t("specifications.values.vision"),
+  },
+  {
+    parameter: "technology",
+    value: t("specifications.values.technology"),
+  },
+  {
+    parameter: "platform",
+    value: t("specifications.values.platform"),
   },
   {
     parameter: "ai",
     value: t("specifications.values.ai"),
   },
   {
-    parameter: "application",
-    value: t("specifications.values.application"),
+    parameter: "network",
+    value: t("specifications.values.network"),
+  },
+  {
+    parameter: "video",
+    value: t("specifications.values.video"),
+  },
+  {
+    parameter: "storage",
+    value: t("specifications.values.storage"),
+  },
+  {
+    parameter: "protection",
+    value: t("specifications.values.protection"),
+  },
+  {
+    parameter: "power",
+    value: t("specifications.values.power"),
   },
 ].map((item) => (
   <div
@@ -447,93 +482,6 @@ export default function SentinelPage() {
 
 
           </div>
-
-
-
-        </Container>
-
-
-      </section>
-
-
-
-
-
-
-
-      {/* Application Scenarios */}
-
-
-      <section className="py-20">
-
-
-        <Container>
-
-
-
-          <h2 className="text-3xl font-bold text-navy">
-
-            {t("applications.title")}
-
-          </h2>
-
-
-
-
-
-          <div className="mt-10 grid gap-8 md:grid-cols-2">
-
-
-
-            {applications.map((item) => (
-
-
-
-              <div
-                key={item.key}
-                className="overflow-hidden rounded-2xl bg-white shadow-sm"
-              >
-
-
-
-                <img
-                  src={item.image}
-                  alt={t(`applications.items.${item.key}`)}
-                  className="h-56 w-full object-cover"
-                />
-
-
-
-                <div className="p-6">
-
-
-                  <h3 className="text-xl font-bold text-navy">
-
-                    {t(`applications.items.${item.key}`)}
-
-                  </h3>
-
-
-                  <p className="mt-3 text-text-muted">
-
-                    {t("applications.description")}
-
-                  </p>
-
-
-                </div>
-
-
-
-              </div>
-
-
-            ))}
-
-
-
-          </div>
-
 
 
 

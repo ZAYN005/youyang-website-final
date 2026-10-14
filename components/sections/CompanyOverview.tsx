@@ -1,11 +1,15 @@
 import Container from "@/components/ui/Container";
 import { useTranslations } from "next-intl";
+import ImageGrid from "@/components/ui/ImageGrid";
+import { imageList } from "@/lib/cms/images";
 
 
 export default function CompanyOverview() {
 
 
   const t = useTranslations("company");
+
+  const images = imageList(t.raw("overview.images"));
 
 
 
@@ -137,6 +141,14 @@ export default function CompanyOverview() {
 
 
         </div>
+
+
+
+        <ImageGrid
+          images={images}
+          alt={t("overview.title")}
+          className="mt-12"
+        />
 
 
 

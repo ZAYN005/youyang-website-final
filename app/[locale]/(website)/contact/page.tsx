@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 
 import Container from "@/components/ui/Container";
-import { siteConfig } from "@/config/site";
 
 
 const benefits = [
@@ -309,7 +308,7 @@ export default function ContactPage() {
 
               <p className="mt-2 text-text-muted">
 
-                {siteConfig.contact.email}
+                {t("info.email")}
 
               </p>
 
@@ -329,7 +328,7 @@ export default function ContactPage() {
 
               <p className="mt-2 text-text-muted">
 
-                {siteConfig.contact.phone}
+                {t("info.phone")}
 
               </p>
 
@@ -349,7 +348,7 @@ export default function ContactPage() {
 
               <p className="mt-2 text-text-muted">
 
-                {siteConfig.contact.address}
+                {t("info.address")}
 
               </p>
 

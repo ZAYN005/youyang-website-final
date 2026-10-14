@@ -17,6 +17,11 @@ key:"inquiries",
 link:"/admin/inquiries"
 },
 
+{
+key:"content",
+link:"/admin/content"
+},
+
 
 
 {
@@ -139,7 +144,7 @@ duration-300
 border
 
 ${
-pathname === item.link
+(pathname === item.link || pathname.startsWith(item.link + "/"))
 ?
 "bg-cyan-400/20 border-cyan-400 text-cyan-400"
 :
@@ -164,7 +169,7 @@ justify-between
 
 
 {
-pathname === item.link &&
+(pathname === item.link || pathname.startsWith(item.link + "/")) &&
 <span>
 ●
 </span>

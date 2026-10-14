@@ -1,5 +1,7 @@
 import {getRequestConfig} from "next-intl/server";
 
+import {getSiteMessages} from "@/lib/cms/content";
+
 
 export default getRequestConfig(async ({requestLocale})=>{
 
@@ -9,7 +11,7 @@ export default getRequestConfig(async ({requestLocale})=>{
 
   const currentLocale =
     locale && ["en","zh"].includes(locale)
-      ? locale
+      ? (locale as "en" | "zh")
       : "en";
 
 
@@ -19,10 +21,8 @@ export default getRequestConfig(async ({requestLocale})=>{
 
     timeZone: "Asia/Shanghai",
 
-    messages:
-      (
-        await import(`../messages/${currentLocale}.json`)
-      ).default
+    // messages/*.json + edits saved in 内容管理 (falls back to the JSON files)
+    messages: await getSiteMessages(currentLocale)
 
   };
 

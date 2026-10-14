@@ -6,15 +6,20 @@ import Button from "@/components/ui/Button";
 
 import { useTranslations, useLocale } from "next-intl";
 
+import ImageCarousel from "@/components/ui/ImageCarousel";
+import { imageList } from "@/lib/cms/images";
+
+
+
 
 
 export const metadata: Metadata = {
 
   title:
-    "Commercial & Industrial Worksites | AI Safety Monitoring Solutions | Youyang Intelligent Control",
+    "Commercial & Industrial Worksites Intelligent Sensing Solution | Youyang Intelligent Control",
 
   description:
-    "Youyang Intelligent Control provides AI-powered intelligent sensing solutions for commercial and industrial worksites, supporting safety monitoring, hazard detection, operational visibility, and large-area perception.",
+    "AI-powered intelligent sensing solutions for industrial environments supporting safety monitoring, hazard detection, operational visibility, and large-area perception.",
 
 };
 
@@ -22,41 +27,9 @@ export const metadata: Metadata = {
 
 
 
-const challenges = [
-
-  "safety",
-
-  "monitoring",
-
-  "risk",
-
-  "visibility",
-
-];
 
 
-
-
-
-const capabilities = [
-
-  "industrial",
-
-  "hazard",
-
-  "analysis",
-
-  "perception",
-
-  "awareness",
-
-];
-
-
-
-
-
-const applications = [
+const coverage = [
 
   "factories",
 
@@ -64,9 +37,48 @@ const applications = [
 
   "construction",
 
-  "facilities",
+  "industrialFacilities",
 
 ];
+
+
+
+
+
+
+
+const capabilities = [
+
+  "industrialMonitoring",
+
+  "hazardDetection",
+
+  "behaviorAnalysis",
+
+  "wideAreaPerception",
+
+];
+
+
+
+
+
+
+
+const values = [
+
+  "workplaceSafety",
+
+  "riskPrevention",
+
+  "operationalEfficiency",
+
+  "intelligentManagement",
+
+];
+
+
+
 
 
 
@@ -79,6 +91,10 @@ export default function IndustrialPage() {
 
   const locale = useLocale();
 
+  const heroImages = imageList(t.raw("hero.images"), ["/solutions/industrial-worksite.jpg"]);
+
+
+
 
 
   return (
@@ -87,17 +103,36 @@ export default function IndustrialPage() {
 
 
 
-      {/* Hero */}
 
 
-      <section className="bg-space-navy py-24 text-white">
+      {/* HERO */}
+
+
+
+      <section className="
+        relative
+        overflow-hidden
+        bg-space-navy
+        py-24
+        text-white
+      ">
+
 
 
         <Container>
 
 
 
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+
+
+          <div className="
+            grid
+            items-center
+            gap-12
+            lg:grid-cols-2
+          ">
+
+
 
 
 
@@ -105,9 +140,19 @@ export default function IndustrialPage() {
 
 
 
-              <p className="text-sm uppercase tracking-[0.3em] text-tech-cyan">
+
+              <p className="
+                text-sm
+                uppercase
+                tracking-[0.3em]
+                text-tech-cyan
+              ">
+
+
 
                 {t("hero.label")}
+
+
 
               </p>
 
@@ -115,9 +160,21 @@ export default function IndustrialPage() {
 
 
 
-              <h1 className="mt-5 text-5xl font-bold">
+
+
+              <h1 className="
+                mt-5
+                text-4xl
+                font-bold
+                leading-tight
+                lg:text-5xl
+              ">
+
+
 
                 {t("hero.title")}
+
+
 
               </h1>
 
@@ -125,11 +182,25 @@ export default function IndustrialPage() {
 
 
 
-              <p className="mt-6 text-lg text-slate-300">
+
+
+              <p className="
+                mt-6
+                max-w-xl
+                text-lg
+                leading-relaxed
+                text-slate-300
+              ">
+
+
 
                 {t("hero.description")}
 
+
+
               </p>
+
+
 
 
 
@@ -138,17 +209,26 @@ export default function IndustrialPage() {
               <div className="mt-8">
 
 
+
                 <Button href={`/${locale}/contact`}>
 
-                  {t("hero.button")} →
+
+
+                  {t("hero.button")}
+
+
 
                 </Button>
+
 
 
               </div>
 
 
 
+
+
+
             </div>
 
 
@@ -157,21 +237,47 @@ export default function IndustrialPage() {
 
 
 
-            <div className="overflow-hidden rounded-3xl">
 
 
-              <img
+            <div className="
+              overflow-hidden
+              rounded-[32px]
+              border
+              border-white/10
+              bg-white/5
+              p-3
+            ">
 
-                src="/solutions/industrial-worksite.jpg"
+
+
+
+
+              <ImageCarousel
+
+
+                images={heroImages}
+
 
                 alt={t("hero.title")}
 
-                className="h-[420px] w-full object-cover"
+
+                className="
+                  h-[420px]
+                  w-full
+                  rounded-[24px]
+                  object-cover
+                "
+
 
               />
 
 
+
+
+
             </div>
+
+
 
 
 
@@ -180,7 +286,12 @@ export default function IndustrialPage() {
 
 
 
+
+
+
         </Container>
+
+
 
 
       </section>
@@ -193,11 +304,12 @@ export default function IndustrialPage() {
 
 
 
-      {/* Overview */}
+      {/* OVERVIEW */}
 
 
 
-      <section className="py-20">
+      <section className="py-24">
+
 
 
         <Container>
@@ -205,53 +317,225 @@ export default function IndustrialPage() {
 
 
 
-          <h2 className="text-3xl font-bold text-navy">
 
-            {t("overview.title")}
-
-          </h2>
-
-
-
+          <div className="
+            grid
+            gap-12
+            lg:grid-cols-3
+          ">
 
 
-          <p className="mt-6 max-w-4xl text-lg text-text-muted">
 
-            {t("overview.description")}
+
+
+
+            <div className="lg:col-span-2">
+
+
+
+
+
+              <p className="
+                text-sm
+                uppercase
+                tracking-[0.3em]
+                text-brand-blue
+              ">
+
+
+
+                {t("overview.label")}
+
+
+
+              </p>
+
+
+
+
+
+
+
+              <h2 className="
+                mt-4
+                text-4xl
+                font-bold
+                text-navy
+              ">
+
+
+
+                {t("overview.title")}
+
+
+
+              </h2>
+
+
+
+
+
+
+
+
+              <p className="
+                mt-6
+                text-lg
+                leading-relaxed
+                text-text-muted
+              ">
+
+
+
+                {t("overview.description")}
+
+
+
+              </p>
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+            <div className="
+              rounded-[32px]
+              bg-[#f4f8ff]
+              p-8
+            ">
+
+
+
+
+
+
+              <h3 className="
+                text-xl
+                font-bold
+                text-navy
+              ">
+
+
+
+                {t("overview.highlightTitle")}
+
+
+
+              </h3>
+
+
+
+
+
+
+
+
+              <p className="
+                mt-4
+                leading-relaxed
+                text-text-muted
+              ">
+
+
+
+                {t("overview.highlight")}
+
+
+
+              </p>
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+        </Container>
+
+
+
+
+      </section>
+
+
+
+
+
+
+
+
+
+      {/* COVERAGE */}
+
+
+
+      <section className="
+        bg-gray-bg
+        py-24
+      ">
+
+
+
+        <Container>
+
+
+
+
+
+          <p className="
+            text-sm
+            uppercase
+            tracking-[0.3em]
+            text-brand-blue
+          ">
+
+
+
+            {t("coverage.label")}
+
+
 
           </p>
 
 
 
 
-        </Container>
-
-
-      </section>
 
 
 
+          <h2 className="
+            mt-4
+            text-4xl
+            font-bold
+            text-navy
+          ">
 
 
 
+            {t("coverage.title")}
 
 
-
-      {/* Challenges */}
-
-
-
-      <section className="bg-gray-bg py-20">
-
-
-        <Container>
-
-
-
-
-          <h2 className="text-3xl font-bold text-navy">
-
-            {t("challenges.title")}
 
           </h2>
 
@@ -260,11 +544,22 @@ export default function IndustrialPage() {
 
 
 
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
+
+          <div className="
+            mt-12
+            grid
+            gap-6
+            md:grid-cols-2
+            lg:grid-cols-4
+          ">
 
 
 
-            {challenges.map(item => (
+
+
+
+            {coverage.map((item,index)=>(
+
 
 
 
@@ -272,12 +567,63 @@ export default function IndustrialPage() {
 
                 key={item}
 
-                className="rounded-2xl bg-white p-6"
+                className="
+                  rounded-[28px]
+                  bg-white
+                  p-8
+                  shadow-sm
+                  transition
+                  hover:-translate-y-2
+                  hover:shadow-xl
+                "
+
+
 
               >
 
 
-                ✓ {t(`challenges.items.${item}`)}
+
+
+
+
+                <span className="
+                  text-4xl
+                  font-black
+                  text-brand-blue/20
+                ">
+
+
+
+                  0{index + 1}
+
+
+
+                </span>
+
+
+
+
+
+
+
+
+                <h3 className="
+                  mt-5
+                  text-xl
+                  font-bold
+                  text-navy
+                ">
+
+
+
+                  {t(`coverage.items.${item}`)}
+
+
+
+                </h3>
+
+
+
 
 
 
@@ -285,7 +631,10 @@ export default function IndustrialPage() {
 
 
 
+
+
             ))}
+
 
 
 
@@ -294,24 +643,19 @@ export default function IndustrialPage() {
 
 
 
+
+
         </Container>
 
 
+
+
       </section>
+      
+      {/* CORE CAPABILITIES */}
 
 
-
-
-
-
-
-
-
-      {/* Capabilities */}
-
-
-
-      <section className="py-20">
+      <section className="py-24">
 
 
         <Container>
@@ -319,22 +663,70 @@ export default function IndustrialPage() {
 
 
 
-          <h2 className="text-3xl font-bold text-navy">
 
-            {t("capabilities.title")}
-
-          </h2>
+          <div>
 
 
+            <p className="
+              text-sm
+              uppercase
+              tracking-[0.3em]
+              text-brand-blue
+            ">
+
+
+              {t("capabilities.label")}
+
+
+            </p>
 
 
 
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
 
 
 
-            {capabilities.map(item => (
+            <h2 className="
+              mt-4
+              text-4xl
+              font-bold
+              text-navy
+            ">
+
+
+              {t("capabilities.title")}
+
+
+            </h2>
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+
+          <div className="
+            mt-12
+            grid
+            gap-8
+            lg:grid-cols-3
+          ">
+
+
+
+
+
+            {capabilities.map((item,index)=>(
+
+
 
 
 
@@ -342,12 +734,88 @@ export default function IndustrialPage() {
 
                 key={item}
 
-                className="rounded-2xl border p-6 font-semibold text-navy"
+                className="
+                  group
+                  rounded-[32px]
+                  border
+                  border-slate-200
+                  bg-white
+                  p-8
+                  transition
+                  duration-300
+                  hover:-translate-y-2
+                  hover:shadow-xl
+                "
+
+
 
               >
 
 
-                ✓ {t(`capabilities.items.${item}`)}
+
+
+
+                <span className="
+                  text-5xl
+                  font-black
+                  text-slate-100
+                  transition
+                  group-hover:text-brand-blue/20
+                ">
+
+
+
+                  0{index + 1}
+
+
+
+                </span>
+
+
+
+
+
+
+
+
+                <h3 className="
+                  mt-6
+                  text-2xl
+                  font-bold
+                  text-navy
+                ">
+
+
+
+                  {t(`capabilities.items.${item}.title`)}
+
+
+
+                </h3>
+
+
+
+
+
+
+
+
+                <p className="
+                  mt-5
+                  leading-relaxed
+                  text-text-muted
+                ">
+
+
+
+                  {t(`capabilities.items.${item}.description`)}
+
+
+
+                </p>
+
+
+
 
 
 
@@ -355,7 +823,11 @@ export default function IndustrialPage() {
 
 
 
+
+
             ))}
+
+
 
 
 
@@ -364,7 +836,10 @@ export default function IndustrialPage() {
 
 
 
+
+
         </Container>
+
 
 
       </section>
@@ -377,11 +852,17 @@ export default function IndustrialPage() {
 
 
 
-      {/* Applications */}
+      {/* CORE VALUE */
 
 
 
-      <section className="bg-gray-bg py-20">
+      <section className="
+        bg-space-navy
+        py-24
+        text-white
+      ">
+
+
 
 
         <Container>
@@ -389,22 +870,73 @@ export default function IndustrialPage() {
 
 
 
-          <h2 className="text-3xl font-bold text-navy">
 
-            {t("applications.title")}
-
-          </h2>
+          <div className="max-w-3xl">
 
 
 
+            <p className="
+              text-sm
+              uppercase
+              tracking-[0.3em]
+              text-tech-cyan
+            ">
 
 
 
-          <div className="mt-8 grid gap-5 md:grid-cols-2">
+              {t("values.label")}
 
 
 
-            {applications.map(item => (
+            </p>
+
+
+
+
+
+
+
+            <h2 className="
+              mt-4
+              text-4xl
+              font-bold
+            ">
+
+
+
+              {t("values.title")}
+
+
+
+            </h2>
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+
+          <div className="
+            mt-12
+            grid
+            gap-6
+            md:grid-cols-2
+          ">
+
+
+
+            {values.map((item,index)=>(
+
+
 
 
 
@@ -412,12 +944,82 @@ export default function IndustrialPage() {
 
                 key={item}
 
-                className="rounded-xl bg-white p-6 font-semibold"
+                className="
+                  rounded-[28px]
+                  border
+                  border-white/10
+                  bg-white/5
+                  p-8
+                "
+
+
+
+
 
               >
 
 
-                {t(`applications.items.${item}`)}
+
+
+
+                <span className="
+                  text-4xl
+                  font-black
+                  text-tech-cyan/60
+                ">
+
+
+
+                  0{index + 1}
+
+
+
+                </span>
+
+
+
+
+
+
+
+
+                <h3 className="
+                  mt-5
+                  text-xl
+                  font-bold
+                ">
+
+
+
+                  {t(`values.items.${item}.title`)}
+
+
+
+                </h3>
+
+
+
+
+
+
+
+
+                <p className="
+                  mt-4
+                  leading-relaxed
+                  text-slate-300
+                ">
+
+
+
+                  {t(`values.items.${item}.description`)}
+
+
+
+                </p>
+
+
+
 
 
 
@@ -425,7 +1027,11 @@ export default function IndustrialPage() {
 
 
 
+
+
             ))}
+
+
 
 
 
@@ -434,7 +1040,11 @@ export default function IndustrialPage() {
 
 
 
+
+
         </Container>
+
+
 
 
       </section>
@@ -447,11 +1057,12 @@ export default function IndustrialPage() {
 
 
 
-      {/* Products */}
+      /* CTA */}
 
 
 
-      <section className="py-20">
+      <section className="py-24">
+
 
 
         <Container>
@@ -459,46 +1070,89 @@ export default function IndustrialPage() {
 
 
 
-          <h2 className="text-3xl font-bold text-navy">
-
-            {t("products.title")}
-
-          </h2>
 
 
-
-
-
-
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
+          <div className="
+            rounded-[40px]
+            bg-[#f4f8ff]
+            px-8
+            py-14
+            text-center
+            lg:px-20
+          ">
 
 
 
-            <div className="rounded-2xl bg-gray-bg p-7 font-bold text-navy">
 
-              {t("products.sentinel")}
+
+
+
+            <h2 className="
+              text-3xl
+              font-bold
+              text-navy
+              lg:text-4xl
+            ">
+
+
+
+              {t("cta.title")}
+
+
+
+            </h2>
+
+
+
+
+
+
+
+
+            <p className="
+              mx-auto
+              mt-5
+              max-w-2xl
+              text-lg
+              leading-relaxed
+              text-text-muted
+            ">
+
+
+
+              {t("cta.description")}
+
+
+
+            </p>
+
+
+
+
+
+
+
+
+            <div className="mt-8">
+
+
+
+              <Button href={`/${locale}/contact`}>
+
+
+
+                {t("cta.button")}
+
+
+
+              </Button>
+
+
+
 
             </div>
 
 
-
-
-
-            <div className="rounded-2xl bg-gray-bg p-7 font-bold text-navy">
-
-              {t("products.dome")}
-
-            </div>
-
-
-
-
-
-            <div className="rounded-2xl bg-gray-bg p-7 font-bold text-navy">
-
-              {t("products.guardian")}
-
-            </div>
 
 
 
@@ -509,10 +1163,16 @@ export default function IndustrialPage() {
 
 
 
+
+
         </Container>
 
 
+
+
       </section>
+
+
 
 
 
@@ -521,5 +1181,6 @@ export default function IndustrialPage() {
     </main>
 
   );
+
 
 }

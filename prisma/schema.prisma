@@ -1,5 +1,6 @@
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "rhel-openssl-1.1.x", "rhel-openssl-3.0.x"]
 }
 
 datasource db {
@@ -25,7 +26,6 @@ model Inquiry {
   priority         String   @default("Medium")
 }
 
-
 model Admin {
   id        String   @id @default(cuid())
   name      String
@@ -35,4 +35,34 @@ model Admin {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   status    String   @default("ACTIVE")
+}
+
+// 内容管理: edits made in the admin panel, applied over messages/*.json
+model ContentOverride {
+  id        String   @id @default(cuid())
+  locale    String // "zh", "en", or "*" for images shared by both languages
+  key       String // message key, e.g. "company.overview.description"
+  value     Json
+  updatedBy String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([locale, key])
+}
+
+// 内容管理: products / solutions added in the admin panel, plus the
+// visibility and order of the built-in ones (builtin = true, data = null)
+model CatalogItem {
+  id        String   @id @default(cuid())
+  kind      String // "product" or "solution"
+  slug      String // used in the page address, e.g. /products/<slug>
+  builtin   Boolean  @default(false)
+  visible   Boolean  @default(true)
+  sortOrder Int      @default(0)
+  data      Json?
+  updatedBy String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([kind, slug])
 }

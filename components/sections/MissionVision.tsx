@@ -1,11 +1,15 @@
 import Container from "@/components/ui/Container";
 import { useTranslations } from "next-intl";
+import ImageGrid from "@/components/ui/ImageGrid";
+import { imageList } from "@/lib/cms/images";
 
 
 export default function MissionVision() {
 
 
   const t = useTranslations("company");
+
+  const images = imageList(t.raw("cultureImages"));
 
 
 
@@ -150,6 +154,13 @@ export default function MissionVision() {
 
 
         </div>
+
+
+        <ImageGrid
+          images={images}
+          alt={t("cultureTitle")}
+          className="mt-12"
+        />
 
 
 </Container>

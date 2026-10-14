@@ -5,6 +5,9 @@ import Button from "@/components/ui/Button";
 
 import { useTranslations, useLocale } from "next-intl";
 
+import ImageCarousel from "@/components/ui/ImageCarousel";
+import { imageList } from "@/lib/cms/images";
+
 
 
 export const metadata: Metadata = {
@@ -32,9 +35,13 @@ const advantages = [
   {
     key: "four",
   },
+  {
+    key: "five",
+  },
+  {
+    key: "six",
+  },
 ];
-
-
 
 const applications = [
   {
@@ -62,6 +69,8 @@ export default function SentinelPage() {
   const t = useTranslations("products.dome");
 
   const locale = useLocale();
+
+  const images = imageList(t.raw("images"), ["/products/dome-watch.png"]);
 
 
 
@@ -96,7 +105,7 @@ export default function SentinelPage() {
 
               <h1 className="mt-5 text-5xl font-bold">
 
-                Dome Watch
+                {t("heroTitle")}
 
               </h1>
 
@@ -104,7 +113,7 @@ export default function SentinelPage() {
 
               <p className="mt-3 text-lg text-slate-300">
 
-                YYZK-SkyView-6L-V1.0
+                {t("model")}
 
               </p>
 
@@ -146,9 +155,9 @@ export default function SentinelPage() {
               <div className="flex h-[380px] w-[380px] items-center justify-center rounded-3xl bg-white/5 p-10 backdrop-blur">
 
 
-                <img
-                  src="/products/dome-watch.png"
-                  alt="Dome Watch"
+                <ImageCarousel
+                  images={images}
+                  alt={t("heroTitle")}
                   className="h-full w-full object-contain"
                 />
 
@@ -313,15 +322,31 @@ export default function SentinelPage() {
          {[
   {
     parameter: "model",
-    value: "YYZK-SkyView-6L-V1.0",
+    value: t("specifications.values.model"),
   },
   {
-    parameter: "imaging",
-    value: t("specifications.values.imaging"),
+    parameter: "vision",
+    value: t("specifications.values.vision"),
+  },
+  {
+    parameter: "technology",
+    value: t("specifications.values.technology"),
   },
   {
     parameter: "ai",
     value: t("specifications.values.ai"),
+  },
+  {
+    parameter: "computing",
+    value: t("specifications.values.computing"),
+  },
+  {
+    parameter: "integration",
+    value: t("specifications.values.integration"),
+  },
+  {
+    parameter: "network",
+    value: t("specifications.values.network"),
   },
   {
     parameter: "application",
@@ -444,91 +469,6 @@ export default function SentinelPage() {
                   {t(`comparison.items.${item.key}.dome`)}
 
                 </p>
-
-
-              </div>
-
-
-            ))}
-
-
-
-          </div>
-
-
-
-        </Container>
-
-
-      </section>
-
-
-
-
-
-
-
-      {/* Application Scenarios */}
-
-      <section className="py-20">
-
-
-        <Container>
-
-
-
-          <h2 className="text-3xl font-bold text-navy">
-
-            {t("applications.title")}
-
-          </h2>
-
-
-
-
-
-          <div className="mt-10 grid gap-8 md:grid-cols-2">
-
-
-
-            {applications.map((item) => (
-
-
-
-              <div
-                key={item.key}
-                className="overflow-hidden rounded-2xl bg-white shadow-sm"
-              >
-
-
-
-                <img
-                  src={item.image}
-                  alt={t(`applications.items.${item.key}`)}
-                  className="h-56 w-full object-cover"
-                />
-
-
-
-                <div className="p-6">
-
-
-                  <h3 className="text-xl font-bold text-navy">
-
-                    {t(`applications.items.${item.key}`)}
-
-                  </h3>
-
-
-                  <p className="mt-3 text-text-muted">
-
-                    {t("applications.description")}
-
-                  </p>
-
-
-                </div>
-
 
 
               </div>

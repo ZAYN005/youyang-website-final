@@ -1,14 +1,14 @@
 import Container from "@/components/ui/Container";
-import { useTranslations } from "next-intl";
-
+import { useTranslations, useLocale } from "next-intl";
+import ImageCarousel from "@/components/ui/ImageCarousel";
+import { imageList } from "@/lib/cms/images";
 
 export default function Hero() {
-
   const t = useTranslations("hero");
-
+  const locale = useLocale();
+  const images = imageList(t.raw("images"), ["/home/building.jpg"]);
 
   return (
-
     <section
       className="
       relative
@@ -19,9 +19,7 @@ export default function Hero() {
       "
     >
 
-
       {/* Background Shape */}
-
       <div
         className="
         absolute
@@ -38,28 +36,22 @@ export default function Hero() {
       />
 
 
-
       <Container>
-
 
         <div
           className="
           relative
           z-10
           grid
-          items-center
+          items-start
           gap-12
           lg:grid-cols-2
           "
         >
 
 
-
           {/* LEFT CONTENT */}
-
-
           <div>
-
 
             <p
               className="
@@ -71,88 +63,91 @@ export default function Hero() {
               text-blue-700
               "
             >
-
               {t("label")}
-
             </p>
-
-
-
 
 
             <h1
-              className="
-              max-w-xl
-              text-3xl
-              font-semibold
-              leading-tight
-              text-slate-900
-              lg:text-4xl
-              "
-            >
-
-              {t("title")}
-
-            </h1>
+  className={`
+  max-w-xl
+  text-3xl
+  font-semibold
+  leading-tight
+  text-slate-900
+  ${locale === "zh" ? "lg:text-6xl" : "lg:text-4xl"}
+  `}
+>
+  {t("title")}
+</h1>
 
 
 
-
-
-            <p
+            <div
               className="
               mt-6
-              max-w-xl
-              text-base
-              leading-relaxed
-              text-slate-600
-              lg:text-lg
+              max-w-2xl
+              space-y-4
               "
             >
 
-              {t("description1")}
+              <p
+  className={`
+  leading-relaxed
+  text-slate-600
+  ${locale === "zh" ? "text-lg lg:text-xl" : "text-base lg:text-lg"}
+  `}
+>
+  {t("description1")}
+</p>
 
-            </p>
+             <p
+  className={`
+  leading-relaxed
+  text-slate-600
+  ${locale === "zh" ? "text-lg lg:text-xl" : "text-base lg:text-lg"}
+  `}
+>
+  {t("description2")}
+</p>
+
+              <p
+  className={`
+  leading-relaxed
+  text-slate-600
+  ${locale === "zh" ? "text-lg lg:text-xl" : "text-base lg:text-lg"}
+  `}
+>
+  {t("description3")}
+</p>
 
 
+             <p
+  className={`
+  leading-relaxed
+  text-slate-600
+  ${locale === "zh" ? "text-lg lg:text-xl" : "text-base lg:text-lg"}
+  `}
+>
+  {t("description4")}
+</p>
 
-
-
-            <p
-              className="
-              mt-4
-              max-w-xl
-              text-base
-              leading-relaxed
-              text-slate-600
-              "
-            >
-
-              {t("description2")}
-
-            </p>
-
-
-
+</div>
           </div>
 
 
 
 
 
-
-
           {/* RIGHT IMAGE */}
-
-
           <div
             className="
             relative
             flex
             justify-center
+            lg:sticky
+            lg:top-20
             "
           >
-
 
 
             <div
@@ -170,29 +165,27 @@ export default function Hero() {
 
 
 
-
-
             <div
-              className="
-              relative
-              h-[380px]
-              w-full
-              overflow-hidden
-              rounded-2xl
-              shadow-xl
-              lg:h-[460px]
-              "
-            >
+  className="
+  relative
+  h-[420px]
+  w-full
+  overflow-hidden
+  rounded-2xl
+  shadow-xl
+  lg:h-[760px]
+  "
+>
 
-
-              <img
-                src="/home/building.jpg"
+              <ImageCarousel
+                images={images}
                 alt="Youyang Intelligent Control Building"
                 className="
-                h-full
-                w-full
-                object-cover
-                "
+h-full
+w-full
+object-cover
+object-center
+"
               />
 
 
@@ -215,8 +208,6 @@ export default function Hero() {
 
 
 
-
-
         </div>
 
 
@@ -224,7 +215,5 @@ export default function Hero() {
 
 
     </section>
-
   );
-
 }

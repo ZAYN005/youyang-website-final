@@ -28,11 +28,6 @@ export const siteConfig = {
     },
 
     {
-      key: "company",
-      href: "/company",
-    },
-
-    {
       key: "products",
       href: "/products",
     },
@@ -43,9 +38,9 @@ export const siteConfig = {
     },
 
     {
-      key: "resources",
-      href: "/resources",
-    },
+  key: "support",
+  href: "/support",
+},
 
     {
       key: "contact",

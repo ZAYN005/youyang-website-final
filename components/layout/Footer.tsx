@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 
-import { siteConfig } from "@/config/site";
 
 import {
   FaLinkedinIn,
@@ -12,11 +11,25 @@ import {
 } from "react-icons/fa";
 
 
-export default function Footer() {
+export interface FooterLink {
+  href: string;
+  label: string;
+}
+
+
+export default function Footer({
+  products,
+  solutions,
+}: {
+  products: FooterLink[];
+  solutions: FooterLink[];
+}) {
 
   const locale = useLocale();
 
   const t = useTranslations("footer");
+
+  const tContact = useTranslations("contact");
 
 
   return (
@@ -24,98 +37,283 @@ export default function Footer() {
     <footer className="bg-space-navy text-white">
 
 
-      <div className="mx-auto max-w-[1200px] px-6 py-16">
+      <div
+        className="
+        mx-auto
+        max-w-[1200px]
+        px-6
+        py-10
+        "
+      >
 
 
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+        <div
+          className="
+          grid
+          gap-10
+          lg:grid-cols-5
+          "
+        >
 
 
 
-          {/* Brand */}
 
-          <div className="lg:col-span-2">
+          {/* PRODUCTS */}
+
+          <div className="relative group">
 
 
-            <Link
-              href={`/${locale}`}
-              className="flex items-center gap-3"
+            <h3
+              className="
+              cursor-pointer
+              font-semibold
+              "
+            >
+              {t("products.title")}
+            </h3>
+
+
+
+            <div
+              className="
+              absolute
+              left-0
+              top-10
+              z-50
+              hidden
+              w-56
+              rounded-2xl
+              border
+              border-white/10
+              bg-[#101d35]/95
+              p-5
+              shadow-2xl
+              backdrop-blur-md
+              group-hover:block
+              "
             >
 
-              <img
-                src="/logo.png"
-                alt="Youyang Intelligent Control"
-                className="h-12 w-auto object-contain"
-              />
+              <ul
+                className="
+                max-h-80
+                space-y-2
+                overflow-y-auto
+                text-sm
+                text-slate-200
+                "
+              >
+
+                {products.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={`/${locale}${item.href}`}
+                      className="
+                    block
+                    rounded-lg
+                    px-3
+                    py-2
+                    transition
+                    hover:bg-blue-500/10
+                    hover:text-cyan-300
+                    "
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+
+              </ul>
 
 
-              <div className="leading-tight">
-
-                <p className="text-xl font-bold">
-                  YOUYANG
-                </p>
-
-                <p className="text-xs text-slate-400">
-                  Intelligent Control
-                </p>
-
-              </div>
+            </div>
 
 
-            </Link>
-
-
-
-
-            <p className="mt-5 max-w-sm leading-relaxed text-slate-300">
-
-              {t("description")}
-
-            </p>
-
-
-
-
-            {/* Social */}
-
-            <div className="mt-8">
-
-
-              <p className="text-sm font-semibold">
-
-                {t("follow")}
-
-              </p>
+          </div>
 
 
 
-              <div className="mt-4 flex items-center gap-5 text-xl text-slate-300">
 
 
-                <Link
-                  href="#"
-                  className="transition hover:text-white"
+
+
+
+
+          {/* SOLUTIONS */}
+
+          <div className="relative group">
+
+
+            <h3
+              className="
+              cursor-pointer
+              font-semibold
+              "
+            >
+              {t("solutions.title")}
+            </h3>
+
+
+
+            <div
+              className="
+              absolute
+              left-0
+              top-10
+              z-50
+              hidden
+              w-64
+              rounded-2xl
+              border
+              border-white/10
+              bg-[#101d35]/95
+              p-5
+              shadow-2xl
+              backdrop-blur-md
+              group-hover:block
+              "
+            >
+
+
+              <ul
+                className="
+                max-h-80
+                space-y-2
+                overflow-y-auto
+                text-sm
+                text-slate-200
+                "
+              >
+
+                {solutions.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={`/${locale}${item.href}`}
+                      className="
+                    block
+                    rounded-lg
+                    px-3
+                    py-2
+                    transition
+                    hover:bg-blue-500/10
+                    hover:text-cyan-300
+                    "
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+
+              </ul>
+
+
+            </div>
+
+
+          </div>
+
+
+
+
+
+
+
+
+
+          {/* FOLLOW US */}
+
+          <div>
+
+
+            <h3 className="font-semibold">
+
+              {t("follow")}
+
+            </h3>
+
+
+
+            <div
+              className="
+              mt-4
+              flex
+              items-center
+              gap-5
+              text-xl
+              text-slate-300
+              "
+            >
+
+
+              <Link
+                href="#"
+                className="hover:text-white transition"
+              >
+                <FaLinkedinIn />
+              </Link>
+
+
+
+              <Link
+                href="#"
+                className="hover:text-white transition"
+              >
+                <FaYoutube />
+              </Link>
+
+
+
+
+              <div className="relative group">
+
+
+                <button
+                  className="hover:text-white transition"
+                >
+                  <FaWeixin />
+                </button>
+
+
+
+                <div
+                  className="
+                  absolute
+                  bottom-10
+                  left-1/2
+                  hidden
+                  w-52
+                  -translate-x-1/2
+                  rounded-xl
+                  bg-white
+                  p-4
+                  shadow-xl
+                  group-hover:block
+                  "
                 >
 
-                  <FaLinkedinIn />
+                  <img
+                    src={t("wechatQr")}
+                    alt="WeChat QR Code"
+                    className="
+                    mx-auto
+                    h-36
+                    w-36
+                    object-contain
+                    "
+                  />
 
-                </Link>
+                  <p
+                    className="
+                    mt-3
+                    text-center
+                    text-sm
+                    text-slate-600
+                    "
+                  >
+                    {t("wechatScan")}
+                  </p>
 
 
-
-                <Link
-                  href="#"
-                  className="transition hover:text-white"
-                >
-
-                  <FaYoutube />
-
-                </Link>
-
-
-
-                <FaWeixin
-                  className="cursor-pointer transition hover:text-white"
-                />
+                </div>
 
 
               </div>
@@ -130,240 +328,11 @@ export default function Footer() {
 
 
 
-          {/* Company */}
 
 
-          <div>
 
 
-            <h3 className="font-semibold">
-
-              {t("company.title")}
-
-            </h3>
-
-
-
-            <ul className="mt-5 space-y-3 text-sm text-slate-300">
-
-
-              <li>
-
-                <Link href={`/${locale}/company`}>
-
-                  {t("company.about")}
-
-                </Link>
-
-              </li>
-
-
-
-              <li>
-
-                <Link href={`/${locale}/company/technology`}>
-
-                  {t("company.technology")}
-
-                </Link>
-
-              </li>
-
-
-
-              <li>
-
-                {t("company.rd")}
-
-              </li>
-
-
-
-              <li>
-
-                {t("company.partners")}
-
-              </li>
-
-
-            </ul>
-
-
-          </div>
-
-
-
-
-
-
-          {/* Products */}
-
-
-          <div>
-
-
-            <h3 className="font-semibold">
-
-              {t("products.title")}
-
-            </h3>
-
-
-
-            <ul className="mt-5 space-y-3 text-sm text-slate-300">
-
-
-              <li>
-
-                <Link href={`/${locale}/products/360-sentinel`}>
-
-                  {t("products.sentinel")}
-
-                </Link>
-
-              </li>
-
-
-
-              <li>
-
-                <Link href={`/${locale}/products/dome-watch`}>
-
-                  {t("products.dome")}
-
-                </Link>
-
-              </li>
-
-
-
-              <li>
-
-                <Link href={`/${locale}/products/wide-area-guardian`}>
-
-                  {t("products.guardian")}
-
-                </Link>
-
-              </li>
-
-
-            </ul>
-
-
-          </div>
-
-
-
-
-
-
-          {/* Solutions */}
-
-
-          <div>
-
-
-            <h3 className="font-semibold">
-
-              {t("solutions.title")}
-
-            </h3>
-
-
-
-
-            <ul className="mt-5 space-y-3 text-sm text-slate-300">
-
-
-              <li>
-
-                <Link href={`/${locale}/solutions/urban-public-spaces`}>
-
-                  {t("solutions.urban")}
-
-                </Link>
-
-              </li>
-
-
-
-
-              <li>
-
-                <Link href={`/${locale}/solutions/transportation-hubs-critical-sites`}>
-
-                  {t("solutions.transportation")}
-
-                </Link>
-
-              </li>
-
-
-
-
-              <li>
-
-                <Link href={`/${locale}/solutions/campuses-educational-institutions`}>
-
-                  {t("solutions.campuses")}
-
-                </Link>
-
-              </li>
-
-
-
-
-              <li>
-
-                <Link href={`/${locale}/solutions/healthcare-senior-care`}>
-
-                  {t("solutions.healthcare")}
-
-                </Link>
-
-              </li>
-
-
-
-
-              <li>
-
-                <Link href={`/${locale}/solutions/high-security-facilities`}>
-
-                  {t("solutions.security")}
-
-                </Link>
-
-              </li>
-
-
-
-
-              <li>
-
-                <Link href={`/${locale}/solutions/commercial-industrial-worksites`}>
-
-                  {t("solutions.industrial")}
-
-                </Link>
-
-              </li>
-
-
-            </ul>
-
-
-          </div>
-
-
-
-
-
-
-          {/* Contact */}
-
+          {/* CONTACT */}
 
           <div>
 
@@ -376,36 +345,72 @@ export default function Footer() {
 
 
 
-            <ul className="mt-5 space-y-3 text-sm text-slate-300">
+            <p
+              className="
+              mt-4
+              text-sm
+              text-slate-300
+              "
+            >
 
+              📞 {tContact("info.phone")}
 
-              <li>
-
-                📞 {siteConfig.contact.phone}
-
-              </li>
-
-
-
-              <li>
-
-                ✉ {siteConfig.contact.email}
-
-              </li>
+            </p>
 
 
 
-              <li className="leading-relaxed">
+            <p
+              className="
+              mt-2
+              text-sm
+              text-slate-300
+              "
+            >
 
-                {siteConfig.contact.address}
+              ✉ {tContact("info.email")}
 
-              </li>
-
-
-            </ul>
+            </p>
 
 
           </div>
+
+
+
+
+
+
+
+
+
+          {/* ADDRESS */}
+
+          <div>
+
+
+            <h3 className="font-semibold">
+
+              {t("addressTitle")}
+
+            </h3>
+
+
+
+            <p
+              className="
+              mt-4
+              text-sm
+              leading-relaxed
+              text-slate-300
+              "
+            >
+
+              {tContact("info.address")}
+
+            </p>
+
+
+          </div>
+
 
 
 
@@ -416,20 +421,18 @@ export default function Footer() {
 
 
 
-
-        {/* Bottom */}
-
+        {/* COPYRIGHT */}
 
         <div
           className="
-          mt-12 flex flex-col gap-3
-          border-t border-white/10
-          pt-6 text-sm text-slate-400
-          md:flex-row md:justify-between
+          mt-10
+          border-t
+          border-white/10
+          pt-5
+          text-sm
+          text-slate-400
           "
         >
-
-
 
           <p>
 
@@ -439,7 +442,6 @@ export default function Footer() {
 
 
         </div>
-
 
 
 
