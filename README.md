@@ -1,38 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Youyang Intelligent Control: Company Website
 
-## Getting Started
+Bilingual (English / 中文) B2B website for **Jiangsu Youyang Intelligent Control Technology (江苏攸洋智控)**, a maker of panoramic AI vision cameras.
+Built during my internship and **live in production at [www.yyteck.cn](https://www.yyteck.cn)**.
 
-First, run the development server:
+## Highlights
+- **Bilingual by design:** every page, form and admin screen is available in English and Chinese (next-intl).
+- **Admin dashboard:** login-protected, with an inquiry inbox, site statistics and system monitoring.
+- **Content management:** company staff edit page text and images themselves, with no code changes.
+- **Self-hosted deployment:** runs on the company's Alibaba Cloud Linux server, not a managed platform.
+- **Automated backups:** the PostgreSQL database and uploaded images are backed up nightly, with 14-day retention.
 
+## Tech stack
+| Layer | Tools |
+| --- | --- |
+| Frontend | Next.js (App Router), React, TypeScript, Tailwind CSS, next-intl |
+| Backend | Next.js route handlers, NextAuth, Prisma ORM |
+| Database | PostgreSQL |
+| Operations | Linux (Alibaba Cloud), PM2, cron, Bash |
+
+## Deployment
+The site is built and served on a 2 GB cloud server:
+1. `setup1.sh` installs Node.js and PM2 in the user's home folder (no root needed), installs dependencies from a China mirror and builds with a memory cap that fits the server.
+2. PM2 keeps the app running and restarts it on failure.
+3. `setup-backup.sh` installs a nightly cron job that dumps the database (`pg_dump`), archives uploaded images and deletes backups older than 14 days.
+
+## Run locally
 ```bash
+npm install
+npx prisma migrate dev
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+Then open http://localhost:3000.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-"# youyang-website-new" 
-"# youyang-website-new" 
+## Author
+**Zain Ali**, Application Developer Intern, Jiangsu Youyang Intelligent Control Technology
+[GitHub](https://github.com/ZAYN005) · zain01chaudhary@gmail.com
