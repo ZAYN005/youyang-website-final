@@ -35,6 +35,8 @@ model Admin {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   status    String   @default("ACTIVE")
+  // modules this admin may use (ignored for role ADMIN, who can use everything)
+  permissions String[] @default([])
 }
 
 // 内容管理: edits made in the admin panel, applied over messages/*.json

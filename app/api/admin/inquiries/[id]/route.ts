@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { authErrorResponse, requirePermission } from "@/lib/admin-auth";
 
 
 
@@ -11,6 +12,13 @@ export async function PATCH(
     }>;
   }
 ) {
+
+
+  try {
+    await requirePermission("inquiries");
+  } catch (error) {
+    return authErrorResponse(error)!;
+  }
 
 
   const { id } = await context.params;
@@ -89,6 +97,13 @@ export async function DELETE(
   }
 
 ) {
+
+
+  try {
+    await requirePermission("inquiries");
+  } catch (error) {
+    return authErrorResponse(error)!;
+  }
 
 
   const { id } = await context.params;

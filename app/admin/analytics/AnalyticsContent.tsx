@@ -3,7 +3,9 @@
 
 
 import {useEffect,useState} from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+
+import { interestLabel } from "@/lib/catalog/interest";
 
 
 
@@ -11,6 +13,8 @@ export default function AnalyticsPage(){
 
 
 const t = useTranslations("analyticsAdmin");
+
+const locale = useLocale();
 
 
 
@@ -243,7 +247,7 @@ pb-3
 
 <span>
 
-{key}
+{interestLabel(key, locale)}
 
 </span>
 

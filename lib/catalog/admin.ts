@@ -3,7 +3,7 @@
  */
 
 import { prisma } from "@/lib/prisma";
-import { requireAdmin } from "@/lib/admin-auth";
+import { requirePermission } from "@/lib/admin-auth";
 import { getSiteMessages, getByPath } from "@/lib/cms/content";
 import { imageList } from "@/lib/cms/images";
 
@@ -25,13 +25,13 @@ export function parseKind(value: string): CatalogKind | null {
 
 export async function adminSession() {
   try {
-    return await requireAdmin();
+    return await requirePermission("content");
   } catch {
     return null;
   }
 }
 
-export function editorName(session: Awaited<ReturnType<typeof requireAdmin>>) {
+export function editorName(session: Awaited<ReturnType<typeof requirePermission>>) {
   return session.user?.email ?? session.user?.name ?? null;
 }
 

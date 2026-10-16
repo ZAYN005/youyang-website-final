@@ -1,8 +1,15 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { authErrorResponse, requirePermission } from "@/lib/admin-auth";
 
 
 export async function GET(){
+
+try {
+await requirePermission("dashboard");
+} catch(error) {
+return authErrorResponse(error)!;
+}
 
 try {
 

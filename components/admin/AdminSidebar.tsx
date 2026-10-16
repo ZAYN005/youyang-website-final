@@ -3,22 +3,28 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
+import { useSession } from "next-auth/react";
+
+import { ModuleKey, TOP_ADMIN_ROLE, effectiveModules } from "@/lib/permissions";
 
 
-const menu = [
+const menu: { key: string; module: ModuleKey | null; link: string }[] = [
 
 {
 key:"command",
+module:"dashboard",
 link:"/admin/dashboard"
 },
 
 {
 key:"inquiries",
+module:"inquiries",
 link:"/admin/inquiries"
 },
 
 {
 key:"content",
+module:"content",
 link:"/admin/content"
 },
 
@@ -26,16 +32,19 @@ link:"/admin/content"
 
 {
 key:"analytics",
+module:"analytics",
 link:"/admin/analytics"
 },
 
 {
 key:"users",
+module:null,
 link:"/admin/users"
 },
 
 {
 key:"settings",
+module:null,
 link:"/admin/settings"
 }
 
@@ -47,6 +56,20 @@ export default function AdminSidebar(){
 
 
 const pathname = usePathname();
+
+const { data: session, status } = useSession();
+
+// each admin only sees the modules given to them in 用户管理
+const role = session?.user?.role;
+const modules = effectiveModules(role, session?.user?.permissions);
+
+const items =
+status === "loading"
+? []
+: menu.filter((item) =>
+role === TOP_ADMIN_ROLE
+|| (item.module !== null && modules.includes(item.module))
+);
 
 const t = useTranslations("adminSidebar");
 
@@ -120,7 +143,7 @@ flex-1
 
 {
 
-menu.map((item)=>(
+items.map((item)=>(
 
 
 <Link

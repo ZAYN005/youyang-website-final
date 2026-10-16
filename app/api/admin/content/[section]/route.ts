@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import type { Prisma } from "@prisma/client";
 
 import { prisma } from "@/lib/prisma";
-import { requireAdmin } from "@/lib/admin-auth";
+import { requirePermission } from "@/lib/admin-auth";
 import { findSection } from "@/lib/cms/registry";
 import {
   LOCALES,
@@ -26,7 +26,7 @@ type Context = { params: Promise<{ section: string }> };
 
 async function authorize() {
   try {
-    return await requireAdmin();
+    return await requirePermission("content");
   } catch {
     return null;
   }

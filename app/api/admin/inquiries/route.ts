@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 import { prisma } from "@/lib/prisma";
 
-import { requireRole } from "@/lib/admin-auth";
+import { authErrorResponse, requirePermission } from "@/lib/admin-auth";
 
 
 export const dynamic = "force-dynamic";
@@ -15,10 +15,7 @@ export async function GET(){
 try{
 
 
-await requireRole([
-"ADMIN",
-"MANAGER"
-]);
+await requirePermission("inquiries");
 
 
 
@@ -94,6 +91,9 @@ inquiries
 
 
 catch(error:any){
+
+const authError = authErrorResponse(error);
+if(authError) return authError;
 
 
 if(error.message==="UNAUTHORIZED"){

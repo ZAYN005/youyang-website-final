@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { prisma } from "@/lib/prisma";
-import { requireAdmin } from "@/lib/admin-auth";
+import { requirePermission } from "@/lib/admin-auth";
 import { CMS_GROUPS } from "@/lib/cms/registry";
 import { sectionKeys } from "@/lib/cms/content";
 import { builtinsFor } from "@/lib/catalog/builtins";
@@ -16,7 +16,7 @@ export const dynamic = "force-dynamic";
 export async function GET() {
 
   try {
-    await requireAdmin();
+    await requirePermission("content");
   } catch {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }

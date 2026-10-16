@@ -3,7 +3,7 @@ import { randomBytes } from "crypto";
 import { mkdir, writeFile } from "fs/promises";
 import path from "path";
 
-import { requireAdmin } from "@/lib/admin-auth";
+import { requirePermission } from "@/lib/admin-auth";
 import {
   IMAGE_TYPES,
   MAX_UPLOAD_BYTES,
@@ -21,7 +21,7 @@ export const runtime = "nodejs";
 export async function POST(request: Request) {
 
   try {
-    await requireAdmin();
+    await requirePermission("content");
   } catch {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }

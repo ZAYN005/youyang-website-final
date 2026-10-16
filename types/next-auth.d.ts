@@ -1,4 +1,5 @@
-import NextAuth from "next-auth";
+import "next-auth";
+import "next-auth/jwt";
 
 
 declare module "next-auth" {
@@ -8,6 +9,9 @@ declare module "next-auth" {
     id: string;
 
     role: string;
+
+    /** modules this admin may use (see lib/permissions.ts) */
+    permissions?: string[];
 
   }
 
@@ -19,6 +23,8 @@ declare module "next-auth" {
       id: string;
 
       role: string;
+
+      permissions: string[];
 
       name?: string | null;
 
@@ -36,7 +42,14 @@ declare module "next-auth/jwt" {
 
   interface JWT {
 
+    id?: string;
+
     role?: string;
+
+    permissions?: string[];
+
+    /** last time role / permissions were read from the database */
+    checkedAt?: number;
 
   }
 

@@ -13,6 +13,7 @@ import SystemMonitor from "@/components/admin/SystemMonitor";
 import AdminSidebar from "@/components/admin/AdminSidebar";
 
 import { authOptions } from "@/lib/auth";
+import { hasModule, homePathFor } from "@/lib/permissions";
 
 
 
@@ -26,6 +27,14 @@ export default async function Dashboard(){
   if(!session){
 
     redirect("/admin/login");
+
+  }
+
+
+  // only admins who were given 指挥中心
+  if(!hasModule(session.user?.role, session.user?.permissions, "dashboard")){
+
+    redirect(homePathFor(session.user?.role, session.user?.permissions));
 
   }
 

@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+
+import { interestLabel } from "@/lib/catalog/interest";
 
 
 
@@ -9,6 +11,8 @@ export default function InquiryCRM(){
 
 
 const t = useTranslations("inquiryCRM");
+
+const locale = useLocale();
 
 
 const [data,setData] = useState<any>(null);
@@ -253,7 +257,9 @@ ${item.company}
 
 ${item.country}
 
-${item.productInterest}`
+${item.productInterest}
+
+${interestLabel(item.productInterest, locale)}`
 
 .toLowerCase()
 
@@ -655,13 +661,13 @@ space-y-3
 
 
 <p>
-{t("product")}: {selected.productInterest || "N/A"}
+{t("product")}: {interestLabel(selected.productInterest, locale) || "N/A"}
 </p>
 
 
 
 <p>
-{t("solution")}: {selected.solutionInterest || "N/A"}
+{t("solution")}: {interestLabel(selected.solutionInterest, locale) || "N/A"}
 </p>
 
 <div className="
